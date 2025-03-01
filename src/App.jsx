@@ -218,6 +218,16 @@ const Projects = () => (
           github: { url: 'https://github.com/aadishsamir123/asdev-multi-ai' }
         }}
       />
+      <ProjectCard 
+        title="ShopSync"
+        description="Allows users to share todo-lists with family and friends. Made using Flutter."
+        icon="/assets/appicons/shopsync.png"
+        links={{
+          web: { url: 'https://as-shopsync.pages.dev' },
+          playStore: { comingSoon: true },
+          github: { comingSoon: true }
+        }}
+      />
     </div>
   </div>
 );
