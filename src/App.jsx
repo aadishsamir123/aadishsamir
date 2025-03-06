@@ -225,7 +225,7 @@ const Projects = () => (
         links={{
           web: { url: 'https://as-shopsync.pages.dev' },
           playStore: { comingSoon: true },
-          github: { comingSoon: true }
+          github: { url: 'https://github.com/aadishsamir123/asdev-shopsync' }
         }}
       />
     </div>
