@@ -84,7 +84,7 @@ const ProjectCard = ({
             className={`h-10 flex items-center gap-2 px-3 rounded-md ${
               links.web.comingSoon 
                 ? 'bg-gray-700 cursor-not-allowed' 
-                : 'bg-blue-500 hover:bg-blue-600'
+                : 'bg-blue-500 hover:bg-blue-600 cursor-pointer'
             } transition-colors text-sm sm:text-base`}
             disabled={links.web.comingSoon}
             onClick={() => links.web.url && window.open(links.web.url, '_blank')}
@@ -192,16 +192,16 @@ const Projects = () => (
     <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <ProjectCard 
         title="WeatherFast"
-        description="A Weather app built using Flutter."
+        description="A simple and clean weather app. Built using Flutter."
         icon="/assets/appicons/weatherfast.png"
         links={{
           web: { comingSoon: true },
-          playStore: { comingSoon: true },
+          playStore: { url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast' },
         }}
       />
       <ProjectCard 
         title="Todoey"
-        description="A simple To-Do List app built using Flutter."
+        description="A simple To-Do List app. Built using Flutter."
         icon="/assets/appicons/todoey.png"
         links={{
           web: { url: 'https://as-todoey.pages.dev' },
@@ -211,7 +211,7 @@ const Projects = () => (
       />
       <ProjectCard 
         title="Multi AI"
-        description="An AI chat application built using basic HTML/CSS/JS."
+        description="An AI chat application. Built using basic HTML/CSS/JS."
         icon="/assets/appicons/multi_ai.png"
         links={{
           web: { url: 'https://as-multi-ai.pages.dev' },
@@ -220,7 +220,7 @@ const Projects = () => (
       />
       <ProjectCard 
         title="ShopSync"
-        description="Allows users to share todo-lists with family and friends. Made using Flutter."
+        description="Share shopping lists with family and friends. Made using Flutter."
         icon="/assets/appicons/shopsync.png"
         links={{
           web: { url: 'https://as-shopsync.pages.dev' },
