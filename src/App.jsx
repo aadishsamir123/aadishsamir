@@ -1,13 +1,10 @@
-/* eslint-disable react/prop-types */
-import {BrowserRouter, Routes, Route, Link, useNavigate} from 'react-router-dom';
+import {BrowserRouter, Link, Route, Routes, useNavigate} from 'react-router-dom';
 import {AnimatePresence, motion} from 'framer-motion';
-import {FaGlobe, FaGithub, FaGooglePlay, FaInfoCircle} from 'react-icons/fa';
+import {FaGithub, FaGlobe, FaGooglePlay, FaInfoCircle} from 'react-icons/fa';
 import Navbar from './components/Navbar';
 import PropTypes from 'prop-types';
 import WeatherFast from "./projects/WeatherFast.jsx";
 import ShopSync from "./projects/ShopSync.jsx";
-import Todoey from "./projects/Todoey.jsx";
-import MultiAI from "./projects/MultiAI.jsx";
 
 const PageWrapper = ({children}) => {
     const pageVariants = {
@@ -249,45 +246,23 @@ const Projects = () => (
         <h1 className="text-4xl font-bold mb-6">My Projects</h1>
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <ProjectCard
-                title="WeatherFast"
-                description="A simple and clean weather app. Built using Flutter."
-                icon="/assets/appicons/weatherfast.png"
-                links={{
-                    web: {comingSoon: true},
-                    playStore: {url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast'},
-                    project_page: {url: 'weatherfast'},
-                }}
-            />
-            <ProjectCard
-                title="Todoey"
-                description="A simple To-Do List app. Built using Flutter."
-                icon="/assets/appicons/todoey.png"
-                links={{
-                    web: {url: 'https://as-todoey.pages.dev'},
-                    playStore: {comingSoon: true},
-                    github: {comingSoon: true},
-                    project_page: {url: 'todoey'},
-                }}
-            />
-            <ProjectCard
-                title="Multi AI"
-                description="An AI chat application. Built using basic HTML/CSS/JS."
-                icon="/assets/appicons/multi_ai.png"
-                links={{
-                    web: {url: 'https://as-multi-ai.pages.dev'},
-                    github: {url: 'https://github.com/aadishsamir123/asdev-multi-ai'},
-                    project_page: {url: 'multi-ai'},
-                }}
-            />
-            <ProjectCard
                 title="ShopSync"
-                description="Share shopping lists with family and friends. Made using Flutter."
+                description="Share shopping lists with family and friends. Built using Flutter."
                 icon="/assets/appicons/shopsync.png"
                 links={{
                     web: {url: 'https://as-shopsync.pages.dev'},
                     playStore: {comingSoon: true},
                     github: {url: 'https://github.com/aadishsamir123/asdev-shopsync'},
                     project_page: {url: 'shopsync'},
+                }}
+            />
+            <ProjectCard
+                title="WeatherFast"
+                description="A simple and clean weather app. Built using Flutter."
+                icon="/assets/appicons/weatherfast.png"
+                links={{
+                    playStore: {url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast'},
+                    project_page: {url: 'weatherfast'},
                 }}
             />
         </div>
@@ -306,8 +281,6 @@ function App() {
                         <Route path="/projects" element={<PageWrapper><Projects/></PageWrapper>}/>
                         <Route path="/projects/weatherfast" element={<PageWrapper><WeatherFast/></PageWrapper>}/>
                         <Route path="/projects/shopsync" element={<PageWrapper><ShopSync/></PageWrapper>}/>
-                        <Route path="/projects/todoey" element={<PageWrapper><Todoey/></PageWrapper>}/>
-                        <Route path="/projects/multi-ai" element={<PageWrapper><MultiAI/></PageWrapper>}/>
                     </Routes>
                 </AnimatePresence>
             </div>
