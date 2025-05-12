@@ -1,0 +1,51 @@
+.privacy-container {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.privacy-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.privacy-date {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.privacy-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.privacy-text {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.privacy-list {
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+  list-style-type: disc; /* Add explicit bullet style */
+}
+
+.privacy-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  display: list-item; /* Ensure list items display as list items */
+}
