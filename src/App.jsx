@@ -253,7 +253,7 @@ const Projects = () => (
                 icon="/assets/appicons/shopsync.png"
                 links={{
                     web: {url: 'https://as-shopsync.pages.dev'},
-                    playStore: {comingSoon: true},
+                    playStore: {url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync'},
                     github: {url: 'https://github.com/aadishsamir123/asdev-shopsync'},
                     project_page: {url: 'shopsync'},
                 }}

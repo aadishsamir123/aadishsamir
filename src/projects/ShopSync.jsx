@@ -59,15 +59,15 @@ const ShopSync = () => {
 
                     <br />
 
-                    {/*<motion.img*/}
-                    {/*    initial={{opacity: 0}}*/}
-                    {/*    animate={{opacity: 1}}*/}
-                    {/*    transition={{delay: 0.4}}*/}
-                    {/*    src="/assets/google-play-badge.png"*/}
-                    {/*    alt="Get it on Google Play"*/}
-                    {/*    className="h-[40px] cursor-pointer hover:opacity-80 transition-opacity shadow-md"*/}
-                    {/*    onClick={() => window.open('https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync', '_blank')}*/}
-                    {/*/>*/}
+                    <motion.img
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: 0.4}}
+                        src="/assets/google-play-badge.png"
+                        alt="Get it on Google Play"
+                        className="h-[40px] cursor-pointer hover:opacity-80 transition-opacity shadow-md"
+                        onClick={() => window.open('https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync', '_blank')}
+                    />
 
                     <motion.p
                         layoutId="card-description-shopsync"
