@@ -72,22 +72,80 @@ const ShopSync = () => {
                         onClick={() => window.open('https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync', '_blank')}
                     />
 
-                    <motion.p
+                    <motion.div
                         layoutId="card-description-shopsync"
                         transition={{delay: 0.01, duration: 0.3}}
-                        className="text-gray-300 text-lg mb-6 max-w-2xl space-y-4 leading-relaxed"
+                        className="text-gray-300 text-lg mb-6 max-w-4xl space-y-6 leading-relaxed"
                     >
-                        <span className="block">
-                            ShopSync is a simple app which lets you share shopping, grocery, or todo-lists with family and friends.
-                        </span>
+                        <div className="space-y-4">
+                            <p className="text-xl font-semibold text-white">
+                                ShopSync - Share shopping lists with family and friends
+                            </p>
+                            
+                            <p>
+                                Transform your shopping experience with ShopSync, the ultimate collaborative shopping list app designed for families and friends. Create, share, and manage shopping lists effortlessly while keeping everyone synchronized and organized.
+                            </p>
+                        </div>
 
-                        <span className="block font-medium">Features include:</span>
-                        <ul className="list-disc pl-5 space-y-1">
-                            <li>Stored on the cloud</li>
-                            <li>Offline access</li>
-                            <li>Recycle bin for easy restoration of deleted tasks.</li>
-                        </ul>
-                    </motion.p>
+                        <div className="space-y-4">
+                            <div>
+                                <h3 className="text-lg font-semibold text-white mb-2">🛒 Smart Shopping Lists</h3>
+                                <p className="text-gray-300">
+                                    Create unlimited shopping lists with custom icons, categories, and detailed descriptions. Add items with counters, deadlines, and store locations. Our intuitive interface makes grocery shopping planning a breeze.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-semibold text-white mb-2">👨‍👩‍👧‍👦 Family Collaboration</h3>
+                                <p className="text-gray-300">
+                                    Share lists instantly with family members and friends via email. Set different permission levels - owners, editors, or viewers. Real-time synchronization ensures everyone stays updated on shopping progress.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-semibold text-white mb-2">📍 Location & Store Management</h3>
+                                <p className="text-gray-300">
+                                    Save frequently used store locations and organize items by shopping destinations. Set specific stores for different items to optimize your shopping routes.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-semibold text-white mb-2">⏰ Smart Organization</h3>
+                                <p className="text-gray-300">
+                                    Set deadlines for urgent items, mark priorities, and track completion status. Clear completed items with one tap or restore them from the recycle bin when needed.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 className="text-lg font-semibold text-white mb-3">✨ Key Features:</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                <ul className="list-disc pl-5 space-y-1 text-gray-300">
+                                    <li>Real-time collaborative shopping lists</li>
+                                    <li>Family sharing with role-based permissions</li>
+                                    <li>Custom icons and categories</li>
+                                    <li>Store location mapping</li>
+                                    <li>Task templates and saved locations</li>
+                                    <li>Deadline management</li>
+                                </ul>
+                                <ul className="list-disc pl-5 space-y-1 text-gray-300">
+                                    <li>Recycle bin for deleted items</li>
+                                    <li>Dark/light theme modes</li>
+                                    <li>Export functionality</li>
+                                    <li>Offline support</li>
+                                    <li>Cross-platform synchronization</li>
+                                    <li>Privacy & security focused</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="bg-gray-700 p-4 rounded-lg">
+                            <h3 className="text-lg font-semibold text-white mb-2">Perfect For:</h3>
+                            <p className="text-gray-300">
+                                Families managing household shopping, roommates coordinating grocery runs, couples planning meals together, group events and party planning, and small business inventory tracking.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
             </motion.div>
 
