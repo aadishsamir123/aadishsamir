@@ -11,6 +11,9 @@ const ShopSync = () => {
         '/assets/screenshots/shopsync/screen3.png',
         '/assets/screenshots/shopsync/screen4.png',
         '/assets/screenshots/shopsync/screen5.png',
+        '/assets/screenshots/shopsync/screen6.png',
+        '/assets/screenshots/shopsync/screen7.png',
+        '/assets/screenshots/shopsync/screen8.png',
     ];
 
     return (
