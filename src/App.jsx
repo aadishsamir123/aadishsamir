@@ -252,7 +252,7 @@ const Projects = () => (
                 description="Share shopping lists with family and friends. Built using Flutter."
                 icon="/assets/appicons/shopsync.png"
                 links={{
-                    web: {url: 'https://as-shopsync.pages.dev'},
+                    web: {url: 'https://app.shopsync.aadish.dev'},
                     playStore: {url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync'},
                     github: {url: 'https://github.com/aadishsamir123/asdev-shopsync'},
                     project_page: {url: 'shopsync'},

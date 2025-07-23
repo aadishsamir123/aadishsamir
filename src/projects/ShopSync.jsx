@@ -54,7 +54,7 @@ const ShopSync = () => {
                         animate={{opacity: 1}}
                         transition={{delay: 0.4}}
                         className="h-10 flex items-center gap-2 px-4 rounded-md bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 transition-all text-sm sm:text-base shadow-md"
-                        onClick={() => window.open('https://as-shopsync.pages.dev', '_blank')}
+                        onClick={() => window.open('https://app.shopsync.aadish.dev', '_blank')}
                     >
                         <FaGlobe className="flex-shrink-0"/>
                         <span className="whitespace-nowrap">View Website</span>
