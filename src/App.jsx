@@ -2,6 +2,9 @@ import {BrowserRouter, Link, Route, Routes, useNavigate} from 'react-router-dom'
 import {AnimatePresence, motion} from 'framer-motion';
 import {FaGithub, FaGlobe, FaGooglePlay, FaInfoCircle} from 'react-icons/fa';
 import Navbar from './components/Navbar';
+import SEOHead from './components/SEOHead';
+import NotFound from './components/NotFound';
+import OptimizedImage from './components/OptimizedImage';
 import PropTypes from 'prop-types';
 import WeatherFast from "./projects/WeatherFast.jsx";
 import ShopSync from "./projects/ShopSync.jsx";
@@ -32,41 +35,78 @@ PageWrapper.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const Home = () => (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-        <motion.h1
-            className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500"
-            initial={{opacity: 0, y: 30}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.8}}
-        >
-            Welcome to My Website
-        </motion.h1>
-        <motion.p
-            className="text-xl text-gray-300 mb-6"
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{delay: 0.3}}
-        >
-            I develop mobile apps and websites using modern technologies.
-        </motion.p>
-        <motion.div
-            className="grid gap-4 sm:grid-cols-2 w-full max-w-md"
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{delay: 0.5}}
-        >
-            <Link to="/projects"
-                  className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-full transition-colors flex items-center gap-2 justify-center">
-                <FaGlobe/> View Projects
-            </Link>
-            <Link to="/about"
-                  className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-full transition-colors flex items-center gap-2 justify-center">
-                <FaInfoCircle/> About Me
-            </Link>
-        </motion.div>
-    </div>
-);
+const Home = () => {
+    const homeStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Aadish Samir Portfolio",
+        "url": "https://aadish.dev",
+        "description": "Student portfolio showcasing hobby development projects built with React and Flutter",
+        "author": {
+            "@type": "Person",
+            "name": "Aadish Samir",
+            "jobTitle": "Student & Hobby Developer",
+            "knowsAbout": ["React", "Flutter", "Firebase", "JavaScript", "Mobile Development", "Programming as a Hobby"]
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://aadish.dev/projects"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    };
+
+    return (
+        <>
+            <SEOHead
+                title="Aadish Samir - Developer & Student"
+                description="Welcome to Aadish Samir's portfolio. Student who codes as a hobby, building mobile and web apps with React, Flutter, and Firebase."
+                keywords="Aadish Samir, Hobby Developer, Student Developer, React, Flutter, Mobile Apps, Portfolio, ASDev, ShopSync, WeatherFast"
+                url="https://aadish.dev/"
+                structuredData={homeStructuredData}
+            />
+            <main className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+                <header>
+                    <motion.h1
+                        className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500"
+                        initial={{opacity: 0, y: 30}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.8}}
+                    >
+                        Welcome to My Website
+                    </motion.h1>
+                    <motion.p
+                        className="text-xl text-gray-300 mb-6"
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: 0.3}}
+                    >
+                        I'm a student who codes as a hobby, building apps with modern tech.
+                    </motion.p>
+                </header>
+                <nav aria-label="Main navigation links">
+                    <motion.div
+                        className="grid gap-4 sm:grid-cols-2 w-full max-w-md"
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: 0.5}}
+                    >
+                        <Link to="/projects"
+                              className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-full transition-colors flex items-center gap-2 justify-center">
+                            <FaGlobe/> View Projects
+                        </Link>
+                        <Link to="/about"
+                              className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-full transition-colors flex items-center gap-2 justify-center">
+                            <FaInfoCircle/> About Me
+                        </Link>
+                    </motion.div>
+                </nav>
+            </main>
+        </>
+    )
+};
 
 const ProjectCard = ({title, description, icon, links}) => {
     const navigate = useNavigate();
@@ -83,12 +123,14 @@ const ProjectCard = ({title, description, icon, links}) => {
                 transition={{delay: 0.01, duration: 0.3}}
                 className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4"
             >
-                <motion.img
+                <OptimizedImage
                     layoutId={`card-image-${links.project_page}`}
-                    transition={{delay: 0.01, duration: 0.3}}
                     src={icon}
-                    alt={`${title} Icon`}
+                    alt={`${title} app icon - ${description}`}
                     className="w-16 h-16 rounded-full flex-shrink-0"
+                    width={64}
+                    height={64}
+                    loading="eager"
                 />
                 <div className="flex-1 text-center sm:text-left w-full overflow-hidden">
                     <motion.h2
@@ -198,96 +240,185 @@ ProjectCard.propTypes = {
 };
 
 const About = () => {
+    const aboutStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Aadish Samir",
+            "alternateName": "ASDev",
+            "description": "Student who codes as a hobby, creating mobile and web applications with React, Flutter, and Firebase",
+            "jobTitle": "Student & Hobby Developer",
+            "url": "https://aadish.dev/about",
+            "sameAs": ["https://github.com/aadishsamir123"],
+            "knowsAbout": [
+                "React Development",
+                "Flutter Development", 
+                "Firebase Integration",
+                "Mobile App Development",
+                "Web Development",
+                "JavaScript",
+                "Programming as a Hobby"
+            ]
+        }
+    };
+
     return (
-        <motion.div
-            className="min-h-screen flex flex-col items-center justify-center px-6 text-center"
-            initial={{opacity: 0, y: 20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.5}}
-        >
-            <motion.h1
-                className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500"
-                initial={{opacity: 0, y: 30}}
-                animate={{opacity: 1, y: 0}}
-                transition={{duration: 0.8}}
-            >
-                About Me
-            </motion.h1>
-            <motion.p
-                className="text-xl text-gray-300 mb-6 max-w-2xl"
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{delay: 0.3}}
-            >
-                Hi! I&apos;m Aadish, a passionate developer who builds modern web and mobile applications.
-                <br/>
-                <br/>
-                I code in React, Flutter, and use Firebase as a backend to create high-performance, user-friendly apps.
-            </motion.p>
+        <>
+            <SEOHead
+                title="About Aadish - Student & Developer"
+                description="Learn about Aadish Samir, a student who codes as a hobby. Building mobile and web apps with React, Flutter, and Firebase."
+                keywords="About Aadish Samir, Student Developer, Hobby Developer, React Flutter, Mobile App Developer, ASDev"
+                url="https://aadish.dev/about"
+                structuredData={aboutStructuredData}
+            />
             <motion.div
-                className="w-full max-w-md"
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{delay: 0.5}}
+                className="min-h-screen flex flex-col items-center justify-center px-6 text-center"
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.5}}
             >
-                <a
-                    href="https://github.com/aadishsamir123"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-full transition-colors flex items-center gap-2 justify-center"
+                <motion.h1
+                    className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500"
+                    initial={{opacity: 0, y: 30}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{duration: 0.8}}
                 >
-                    <FaGithub/> View GitHub Profile
-                </a>
+                    About Me
+                </motion.h1>
+                <motion.p
+                    className="text-xl text-gray-300 mb-6 max-w-2xl"
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{delay: 0.3}}
+                >
+                    Hi! I&apos;m Aadish, a student who loves coding as a hobby and building cool apps.
+                    <br/>
+                    <br/>
+                    I enjoy working with React, Flutter, and Firebase to create fun projects and learn new things along the way.
+                </motion.p>
+                <motion.div
+                    className="w-full max-w-md"
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{delay: 0.5}}
+                >
+                    <a
+                        href="https://github.com/aadishsamir123"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-full transition-colors flex items-center gap-2 justify-center"
+                    >
+                        <FaGithub/> View GitHub Profile
+                    </a>
+                </motion.div>
             </motion.div>
-        </motion.div>
+        </>
     );
 };
 
-const Projects = () => (
-    <div className="min-h-screen p-8 pt-24 text-gray-300">
-        <h1 className="text-4xl font-bold mb-6">My Projects</h1>
-        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            <ProjectCard
-                title="ShopSync"
-                description="Share shopping lists with family and friends. Built using Flutter."
-                icon="/assets/appicons/shopsync.png"
-                links={{
-                    web: {url: 'https://app.shopsync.aadish.dev'},
-                    playStore: {url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync'},
-                    github: {url: 'https://github.com/aadishsamir123/asdev-shopsync'},
-                    project_page: {url: 'shopsync'},
-                }}
+const Projects = () => {
+    const projectsStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Aadish Samir's Projects",
+        "description": "Showcase of mobile and web applications developed by Aadish Samir",
+        "url": "https://aadish.dev/projects",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "ShopSync",
+                    "description": "Share shopping lists with family and friends. Built using Flutter.",
+                    "url": "https://aadish.dev/projects/shopsync",
+                    "applicationCategory": "ProductivityApplication",
+                    "operatingSystem": "Android, Web",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Aadish Samir"
+                    }
+                },
+                {
+                    "@type": "SoftwareApplication", 
+                    "name": "WeatherFast",
+                    "description": "A simple and clean weather app. Built using Flutter.",
+                    "url": "https://aadish.dev/projects/weatherfast",
+                    "applicationCategory": "WeatherApplication",
+                    "operatingSystem": "Android",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Aadish Samir"
+                    }
+                }
+            ]
+        }
+    };
+
+    return (
+        <>
+            <SEOHead
+                title="My Projects - Apps & Websites"
+                description="Check out Aadish's hobby projects including ShopSync shopping list app and WeatherFast weather app, built with React and Flutter."
+                keywords="Aadish Projects, Hobby Projects, Mobile Apps, Web Apps, ShopSync, WeatherFast, Flutter Apps, React Apps"
+                url="https://aadish.dev/projects"
+                structuredData={projectsStructuredData}
             />
-            <ProjectCard
-                title="WeatherFast"
-                description="A simple and clean weather app. Built using Flutter."
-                icon="/assets/appicons/weatherfast.png"
-                links={{
-                    playStore: {url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast'},
-                    project_page: {url: 'weatherfast'},
-                }}
-            />
-        </div>
-    </div>
-);
+            <div className="min-h-screen p-8 pt-24 text-gray-300">
+                <header>
+                    <h1 className="text-4xl font-bold mb-6">My Projects</h1>
+                </header>
+                <main>
+                    <section className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <ProjectCard
+                            title="ShopSync"
+                            description="Share shopping lists with family and friends. Built using Flutter."
+                            icon="/assets/appicons/shopsync.png"
+                            links={{
+                                web: {url: 'https://app.shopsync.aadish.dev'},
+                                playStore: {url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync'},
+                                github: {url: 'https://github.com/aadishsamir123/asdev-shopsync'},
+                                project_page: {url: 'shopsync'},
+                            }}
+                        />
+                        <ProjectCard
+                            title="WeatherFast"
+                            description="A simple and clean weather app. Built using Flutter."
+                            icon="/assets/appicons/weatherfast.png"
+                            links={{
+                                playStore: {url: 'https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast'},
+                                project_page: {url: 'weatherfast'},
+                            }}
+                        />
+                    </section>
+                </main>
+            </div>
+        </>
+    )
+};
 
 function App() {
     return (
         <BrowserRouter>
             <div className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-gray-900 to-black text-white">
                 <Navbar/>
-                <AnimatePresence mode="wait" initial={false}>
-                    <Routes>
-                        <Route path="/" element={<PageWrapper><Home/></PageWrapper>}/>
-                        <Route path="/about" element={<PageWrapper><About/></PageWrapper>}/>
-                        <Route path="/projects" element={<PageWrapper><Projects/></PageWrapper>}/>
-                        <Route path="/projects/weatherfast" element={<PageWrapper><WeatherFast/></PageWrapper>}/>
-                        <Route path="/projects/shopsync" element={<PageWrapper><ShopSync/></PageWrapper>}/>
+                <main>
+                    <AnimatePresence mode="wait" initial={false}>
+                        <Routes>
+                            <Route path="/" element={<PageWrapper><Home/></PageWrapper>}/>
+                            <Route path="/about" element={<PageWrapper><About/></PageWrapper>}/>
+                            <Route path="/projects" element={<PageWrapper><Projects/></PageWrapper>}/>
+                            <Route path="/projects/weatherfast" element={<PageWrapper><WeatherFast/></PageWrapper>}/>
+                            <Route path="/projects/shopsync" element={<PageWrapper><ShopSync/></PageWrapper>}/>
 
-                        <Route path="/legal/projects/shopsync/privacypolicy" element={<PageWrapper><ShopSyncPrivacyPolicy/></PageWrapper>}/>
-                        <Route path="/legal/projects/shopsync/disclaimer" element={<PageWrapper><ShopSyncDisclaimer/></PageWrapper>}/>
-                    </Routes>
-                </AnimatePresence>
+                            <Route path="/legal/projects/shopsync/privacypolicy" element={<PageWrapper><ShopSyncPrivacyPolicy/></PageWrapper>}/>
+                            <Route path="/legal/projects/shopsync/disclaimer" element={<PageWrapper><ShopSyncDisclaimer/></PageWrapper>}/>
+                            
+                            {/* 404 Catch-all route */}
+                            <Route path="*" element={<PageWrapper><NotFound/></PageWrapper>}/>
+                        </Routes>
+                    </AnimatePresence>
+                </main>
             </div>
         </BrowserRouter>
     );

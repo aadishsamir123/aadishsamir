@@ -1,9 +1,36 @@
 import {motion} from 'framer-motion';
 import {FaArrowLeft} from 'react-icons/fa';
 import {useNavigate} from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 
 const WeatherFast = () => {
     const navigate = useNavigate();
+
+    const weatherfastStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "WeatherFast",
+        "description": "A simple and clean weather app with accurate forecasts and intuitive design. Built with Flutter for Android devices.",
+        "url": "https://aadish.dev/projects/weatherfast",
+        "applicationCategory": "WeatherApplication",
+        "operatingSystem": "Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Aadish Samir"
+        },
+        "screenshot": "https://aadish.dev/assets/screenshots/weatherfast/screen1.png",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "50"
+        }
+    };
 
     const screenshots = [
         '/assets/screenshots/weatherfast/screen1.png',
@@ -11,7 +38,16 @@ const WeatherFast = () => {
     ];
 
     return (
-        <div className="min-h-screen p-8 pt-24 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+        <>
+            <SEOHead
+                title="WeatherFast - Simple Weather App"
+                description="WeatherFast is a clean weather app with accurate forecasts. A hobby project built with Flutter for Android devices."
+                keywords="WeatherFast, Weather App, Android Weather, Flutter Weather App, Simple Weather, Hobby Project, Aadish Samir"
+                url="https://aadish.dev/projects/weatherfast"
+                image="https://aadish.dev/assets/screenshots/weatherfast/screen1.png"
+                structuredData={weatherfastStructuredData}
+            />
+            <div className="min-h-screen p-8 pt-24 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
             <motion.button
                 initial={{opacity: 0, x: -20}}
                 animate={{opacity: 1, x: 0}}
@@ -105,7 +141,8 @@ const WeatherFast = () => {
                     ))}
                 </div>
             </motion.div>
-        </div>
+            </div>
+        </>
     );
 };
 

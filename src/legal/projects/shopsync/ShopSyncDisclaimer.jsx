@@ -1,9 +1,18 @@
 import 'react';
 import '../../LegalTexts.css';
+import SEOHead from '../../../components/SEOHead';
 
 const ShopSyncDisclaimer = () => {
     return (
-        <div className="privacy-container">
+        <>
+            <SEOHead
+                title="ShopSync Disclaimer"
+                description="Disclaimer and terms of use for ShopSync collaborative shopping list application."
+                keywords="ShopSync Disclaimer, Terms of Use, App Terms, Shopping List App Disclaimer"
+                url="https://aadish.dev/legal/projects/shopsync/disclaimer"
+                noIndex={true}
+            />
+            <div className="privacy-container">
             <div className="privacy-card">
                 <h1 className="privacy-title">ShopSync Disclaimer</h1>
                 <p className="privacy-date">Last updated: May 12, 2025</p>
@@ -93,7 +102,8 @@ const ShopSyncDisclaimer = () => {
                     <li>By email: asdev.feedback@gmail.com</li>
                 </ul>
             </div>
-        </div>
+            </div>
+        </>
     );
 };
 

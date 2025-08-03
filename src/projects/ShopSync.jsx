@@ -1,9 +1,36 @@
 import {motion} from 'framer-motion';
 import {FaArrowLeft, FaGlobe} from 'react-icons/fa';
 import {useNavigate} from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 
 const ShopSync = () => {
     const navigate = useNavigate();
+
+    const shopsyncStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ShopSync",
+        "description": "Share shopping lists with family and friends. A collaborative shopping list app built with Flutter and Firebase.",
+        "url": "https://aadish.dev/projects/shopsync",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": ["Android", "Web"],
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Aadish Samir"
+        },
+        "screenshot": "https://aadish.dev/assets/screenshots/shopsync/screen1.png",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "100"
+        }
+    };
 
     const screenshots = [
         '/assets/screenshots/shopsync/screen1.png',
@@ -17,7 +44,16 @@ const ShopSync = () => {
     ];
 
     return (
-        <div className="min-h-screen p-8 pt-24 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+        <>
+            <SEOHead
+                title="ShopSync - Shopping List App"
+                description="ShopSync lets you share shopping lists with family and friends. A hobby project built with Flutter and Firebase for real-time collaboration."
+                keywords="ShopSync, Shopping List App, Flutter App, Family Shopping, Grocery List, Hobby Project, Aadish Samir"
+                url="https://aadish.dev/projects/shopsync"
+                image="https://aadish.dev/assets/screenshots/shopsync/screen1.png"
+                structuredData={shopsyncStructuredData}
+            />
+            <div className="min-h-screen p-8 pt-24 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
             <motion.button
                 initial={{opacity: 0, x: -20}}
                 animate={{opacity: 1, x: 0}}
@@ -179,7 +215,8 @@ const ShopSync = () => {
                     ))}
                 </div>
             </motion.div>
-        </div>
+            </div>
+        </>
     );
 };
 

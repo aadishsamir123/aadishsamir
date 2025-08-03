@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /
+Allow: /about
+Allow: /projects
+Allow: /projects/shopsync
+Allow: /projects/weatherfast
+
+# Legal pages (disallow)
+Disallow: /legal/projects/shopsync/privacypolicy
+Disallow: /legal/projects/shopsync/disclaimer
+
+# Sitemaps
+Sitemap: https://aadish.dev/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

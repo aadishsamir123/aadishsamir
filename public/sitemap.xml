@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Home Page -->
+  <url>
+    <loc>https://aadish.dev/</loc>
+    <lastmod>2025-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://aadish.dev/about</loc>
+    <lastmod>2025-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Projects Page -->
+  <url>
+    <loc>https://aadish.dev/projects</loc>
+    <lastmod>2025-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- ShopSync Project -->
+  <url>
+    <loc>https://aadish.dev/projects/shopsync</loc>
+    <lastmod>2025-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aadish.dev/assets/screenshots/shopsync/screen1.png</image:loc>
+      <image:title>ShopSync App Screenshot</image:title>
+      <image:caption>ShopSync collaborative shopping list app interface</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aadish.dev/assets/appicons/shopsync.png</image:loc>
+      <image:title>ShopSync App Icon</image:title>
+      <image:caption>ShopSync mobile application icon</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- WeatherFast Project -->
+  <url>
+    <loc>https://aadish.dev/projects/weatherfast</loc>
+    <lastmod>2025-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aadish.dev/assets/screenshots/weatherfast/screen1.png</image:loc>
+      <image:title>WeatherFast App Screenshot</image:title>
+      <image:caption>WeatherFast weather application interface</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aadish.dev/assets/appicons/weatherfast.png</image:loc>
+      <image:title>WeatherFast App Icon</image:title>
+      <image:caption>WeatherFast mobile application icon</image:caption>
+    </image:image>
+  </url>
+</urlset>

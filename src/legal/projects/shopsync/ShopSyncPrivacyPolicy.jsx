@@ -1,9 +1,18 @@
 import 'react';
 import '../../LegalTexts.css';
+import SEOHead from '../../../components/SEOHead';
 
 const ShopSyncPrivacyPolicy = () => {
     return (
-        <div className="privacy-container">
+        <>
+            <SEOHead
+                title="ShopSync Privacy Policy"
+                description="Privacy Policy for ShopSync app explaining how we collect, use, and protect your personal information while using our collaborative shopping list service."
+                keywords="ShopSync Privacy Policy, Data Protection, App Privacy, Shopping List Privacy"
+                url="https://aadish.dev/legal/projects/shopsync/privacypolicy"
+                noIndex={true}
+            />
+            <div className="privacy-container">
             <div className="privacy-card">
                 <h1 className="privacy-title">ShopSync Privacy Policy</h1>
                 <p className="privacy-date">Last updated: May 12, 2025</p>
@@ -298,7 +307,8 @@ const ShopSyncPrivacyPolicy = () => {
                     <li className="privacy-text">By email: asdev.feedback@gmail.com</li>
                 </ul>
             </div>
-        </div>
+            </div>
+        </>
     );
 };
 

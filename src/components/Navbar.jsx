@@ -9,8 +9,12 @@ const Navbar = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <nav
-            className="fixed top-0 left-0 right-0 bg-black sm:bg-black/70 sm:backdrop-blur-md border-b border-gray-800 z-50">
+        <header>
+            <nav
+                className="fixed top-0 left-0 right-0 bg-black sm:bg-black/70 sm:backdrop-blur-md border-b border-gray-800 z-50"
+                role="navigation"
+                aria-label="Main navigation"
+            >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <Link to="/" className="text-2xl font-semibold text-white tracking-wide">
@@ -22,6 +26,8 @@ const Navbar = () => {
                         className="sm:hidden text-gray-300 hover:text-white transition-colors relative w-6 h-6"
                         onClick={toggleMenu}
                         style={{zIndex: 60}} // Ensure button stays above overlay
+                        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                        aria-expanded={isOpen}
                     >
                         <AnimatePresence mode="wait">
                             {isOpen ? (
@@ -151,7 +157,8 @@ const Navbar = () => {
                     </>
                 )}
             </AnimatePresence>
-        </nav>
+            </nav>
+        </header>
     );
 };
 
