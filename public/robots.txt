@@ -11,6 +11,7 @@ Allow: /projects/weatherfast
 # Legal pages (disallow)
 Disallow: /legal/projects/shopsync/privacypolicy
 Disallow: /legal/projects/shopsync/disclaimer
+Disallow: /legal/projects/qrattendance/privacypolicy
 
 # Sitemaps
 Sitemap: https://aadish.dev/sitemap.xml

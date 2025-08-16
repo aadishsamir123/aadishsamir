@@ -41,11 +41,13 @@
 .privacy-list {
   padding-left: 2rem;
   margin-bottom: 1.5rem;
+  color: #000000;
   list-style-type: disc; /* Add explicit bullet style */
 }
 
 .privacy-list li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
+  color: #000000;
   display: list-item; /* Ensure list items display as list items */
 }

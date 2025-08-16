@@ -10,6 +10,7 @@ import WeatherFast from "./projects/WeatherFast.jsx";
 import ShopSync from "./projects/ShopSync.jsx";
 import ShopSyncPrivacyPolicy from "./legal/projects/shopsync/ShopSyncPrivacyPolicy.jsx";
 import ShopSyncDisclaimer from "./legal/projects/shopsync/ShopSyncDisclaimer.jsx";
+import QRAttendancePrivacyPolicy from "./legal/projects/qrattendance/QRAttendancePrivacyPolicy.jsx";
 
 const PageWrapper = ({children}) => {
     const pageVariants = {
@@ -412,8 +413,9 @@ function App() {
                             <Route path="/projects/shopsync" element={<PageWrapper><ShopSync/></PageWrapper>}/>
 
                             <Route path="/legal/projects/shopsync/privacypolicy" element={<PageWrapper><ShopSyncPrivacyPolicy/></PageWrapper>}/>
-                            <Route path="/legal/projects/shopsync/disclaimer" element={<PageWrapper><ShopSyncDisclaimer/></PageWrapper>}/>
-                            
+                            <Route path="/legal/projects/shopsync/disclaimer" element={<PageWrapper><ShopSyncDisclaimer /></PageWrapper>} />
+                            <Route path="/legal/projects/qrattendance/privacypolicy" element={<PageWrapper><QRAttendancePrivacyPolicy /></PageWrapper>}/>
+
                             {/* 404 Catch-all route */}
                             <Route path="*" element={<PageWrapper><NotFound/></PageWrapper>}/>
                         </Routes>
