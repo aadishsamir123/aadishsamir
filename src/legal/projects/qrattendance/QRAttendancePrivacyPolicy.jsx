@@ -14,7 +14,7 @@ const QRAttendancePrivacyPolicy = () => {
             />
             <div className="privacy-container">
             <div className="privacy-card">
-                <h1 className="privacy-title">QR AttendancePrivacy Policy</h1>
+                <h1 className="privacy-title">QR Attendance Privacy Policy</h1>
                 <p className="privacy-date">Last updated: August 16, 2025</p>
                 <p className="privacy-text">This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
                 <p className="privacy-text">We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/" target="_blank">Free Privacy Policy Generator</a>.</p>
