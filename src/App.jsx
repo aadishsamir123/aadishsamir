@@ -14,6 +14,7 @@ import OptimizedImage from "./components/OptimizedImage";
 import PropTypes from "prop-types";
 import WeatherFast from "./projects/WeatherFast.jsx";
 import ShopSync from "./projects/ShopSync.jsx";
+import QTick from "./projects/QTick.jsx";
 import ShopSyncPrivacyPolicy from "./legal/projects/shopsync/ShopSyncPrivacyPolicy.jsx";
 import ShopSyncDisclaimer from "./legal/projects/shopsync/ShopSyncDisclaimer.jsx";
 import QRAttendancePrivacyPolicy from "./legal/projects/qrattendance/QRAttendancePrivacyPolicy.jsx";
@@ -79,7 +80,7 @@ const Home = () => {
       <SEOHead
         title="Aadish Samir - Developer & Student"
         description="Welcome to Aadish Samir's portfolio. Student who codes as a hobby, building mobile and web apps with React, Flutter, and Firebase."
-        keywords="Aadish Samir, Hobby Developer, Student Developer, React, Flutter, Mobile Apps, Portfolio, ASDev, ShopSync, WeatherFast"
+        keywords="Aadish Samir, Hobby Developer, Student Developer, React, Flutter, Mobile Apps, Portfolio, ASDev, ShopSync, QTick, WeatherFast, QR Attendance"
         url="https://aadish.dev/"
         structuredData={homeStructuredData}
       />
@@ -99,7 +100,8 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            I'm a student who codes as a hobby, building apps with modern tech.
+            I&apos;m a student who codes as a hobby, building apps with modern
+            tech.
           </motion.p>
         </header>
         <nav aria-label="Main navigation links">
@@ -377,6 +379,19 @@ const Projects = () => {
         },
         {
           "@type": "SoftwareApplication",
+          name: "QTick",
+          description:
+            "A smart and fast QR attendance tracking app. Built using Flutter.",
+          url: "https://aadish.dev/projects/qtick",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Android, Web",
+          author: {
+            "@type": "Person",
+            name: "Aadish Samir",
+          },
+        },
+        {
+          "@type": "SoftwareApplication",
           name: "WeatherFast",
           description: "A simple and clean weather app. Built using Flutter.",
           url: "https://aadish.dev/projects/weatherfast",
@@ -395,8 +410,8 @@ const Projects = () => {
     <>
       <SEOHead
         title="My Projects - Apps & Websites"
-        description="Check out Aadish's hobby projects including ShopSync shopping list app and WeatherFast weather app, built with React and Flutter."
-        keywords="Aadish Projects, Hobby Projects, Mobile Apps, Web Apps, ShopSync, WeatherFast, Flutter Apps, React Apps"
+        description="Check out Aadish's hobby projects including ShopSync shopping list app, QTick QR attendance app, and WeatherFast weather app, built with React and Flutter."
+        keywords="Aadish Projects, Hobby Projects, Mobile Apps, Web Apps, ShopSync, QTick, WeatherFast, QR Attendance, Flutter Apps, React Apps"
         url="https://aadish.dev/projects"
         structuredData={projectsStructuredData}
       />
@@ -419,6 +434,17 @@ const Projects = () => {
                   url: "https://github.com/aadishsamir123/asdev-shopsync",
                 },
                 project_page: { url: "shopsync" },
+              }}
+            />
+            <ProjectCard
+              title="QTick"
+              description="A smart and fast QR attendance tracking app. Built using Flutter."
+              icon="/assets/appicons/qtick.png"
+              links={{
+                playStore: {
+                  url: "https://play.google.com/store/apps/details?id=com.aadishsamir.qtick",
+                },
+                project_page: { url: "qtick" },
               }}
             />
             <ProjectCard
@@ -484,6 +510,14 @@ function App() {
                 element={
                   <PageWrapper>
                     <ShopSync />
+                  </PageWrapper>
+                }
+              />
+              <Route
+                path="/projects/qtick"
+                element={
+                  <PageWrapper>
+                    <QTick />
                   </PageWrapper>
                 }
               />

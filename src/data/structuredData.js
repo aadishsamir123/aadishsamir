@@ -77,6 +77,13 @@ export const portfolioStructuredData = {
     },
     {
       "@type": "SoftwareApplication",
+      name: "QTick",
+      description: "Smart QR attendance tracking application",
+      url: "https://aadish.dev/projects/qtick",
+      applicationCategory: "BusinessApplication",
+    },
+    {
+      "@type": "SoftwareApplication",
       name: "WeatherFast",
       description: "Clean and simple weather application",
       url: "https://aadish.dev/projects/weatherfast",
