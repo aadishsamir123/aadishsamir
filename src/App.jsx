@@ -442,7 +442,10 @@ const Projects = () => {
               icon="/assets/appicons/qtick.png"
               links={{
                 playStore: {
-                  url: "https://play.google.com/store/apps/details?id=com.aadishsamir.qtick",
+                  url: "https://play.google.com/store/apps/details?id=com.aadishsamir.qr_attendance",
+                },
+                github: {
+                  url: "https://github.com/aadishsamir123/asdev-qtick",
                 },
                 project_page: { url: "qtick" },
               }}
