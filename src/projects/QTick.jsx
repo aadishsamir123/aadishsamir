@@ -51,20 +51,28 @@ const QTick = () => {
         image="https://aadish.dev/assets/screenshots/qtick/screen1.png"
         structuredData={qtickStructuredData}
       />
-      <div className="min-h-screen p-8 pt-24 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+      <div
+        className="min-h-screen p-8 pt-24 font-mono"
+        style={{
+          backgroundColor: "var(--bg-primary)",
+          color: "var(--text-primary)",
+        }}
+      >
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => navigate("/projects")}
-          className="flex items-center gap-2 text-white mb-8 hover:text-gray-300 transition-colors"
+          className="flex items-center gap-2 mb-8 transition-colors border-2 border-gray-600 hover:border-blue-500 hover:bg-blue-500/20 px-4 py-2"
+          style={{ color: "var(--text-muted)" }}
         >
-          <FaArrowLeft /> Back to Projects
+          <FaArrowLeft /> [Back to Projects]
         </motion.button>
 
         <motion.div
           layoutId="card-container-qtick"
           transition={{ delay: 0.01, duration: 0.3 }}
-          className="flex flex-col md:flex-row items-start gap-8 mb-12 bg-gray-800 p-6 rounded-xl shadow-lg"
+          className="flex flex-col md:flex-row items-start gap-8 mb-12 border-2 border-gray-700 p-6 shadow-lg"
+          style={{ backgroundColor: "var(--bg-secondary)" }}
         >
           <motion.img
             layoutId="card-image-qtick"
@@ -78,9 +86,10 @@ const QTick = () => {
             <motion.h1
               layoutId="card-title-qtick"
               transition={{ delay: 0.01, duration: 0.3 }}
-              className="text-4xl font-bold text-white mb-4"
+              className="text-4xl font-bold mb-4"
+              style={{ color: "var(--color-blue)" }}
             >
-              QTick
+              <span className="text-gray-500">$</span> QTick
             </motion.h1>
 
             <motion.img
@@ -101,11 +110,16 @@ const QTick = () => {
             <motion.div
               layoutId="card-description-qtick"
               transition={{ delay: 0.01, duration: 0.3 }}
-              className="text-gray-300 text-lg mb-6 max-w-4xl space-y-6 leading-relaxed"
+              className="text-lg mb-6 max-w-4xl space-y-6 leading-relaxed"
+              style={{ color: "var(--text-muted)" }}
             >
               <div className="space-y-4">
-                <p className="text-xl font-semibold text-white">
-                  QTick - A smart and fast QR Attendance app
+                <p
+                  className="text-xl font-semibold"
+                  style={{ color: "var(--color-blue)" }}
+                >
+                  <span className="text-green-400">//</span> QTick - A smart and
+                  fast QR Attendance app
                 </p>
 
                 <p>
@@ -119,10 +133,13 @@ const QTick = () => {
 
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <h3
+                    className="text-lg font-semibold mb-2"
+                    style={{ color: "var(--color-blue)" }}
+                  >
                     📱 QR Code Scanning
                   </h3>
-                  <p className="text-gray-300">
+                  <p style={{ color: "var(--text-muted)" }}>
                     Fast and accurate QR code scanning for attendance tracking.
                     Instant audio and visual feedback confirms successful scans.
                     Records both arrival and departure times automatically.
@@ -130,10 +147,13 @@ const QTick = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <h3
+                    className="text-lg font-semibold mb-2"
+                    style={{ color: "var(--color-blue)" }}
+                  >
                     💾 Offline Support
                   </h3>
-                  <p className="text-gray-300">
+                  <p style={{ color: "var(--text-muted)" }}>
                     Works perfectly without internet connection using SQLite
                     local storage. All attendance records are stored safely on
                     your device, ensuring data persistence even when offline.
@@ -141,10 +161,13 @@ const QTick = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <h3
+                    className="text-lg font-semibold mb-2"
+                    style={{ color: "var(--color-blue)" }}
+                  >
                     📊 Data Export & Reporting
                   </h3>
-                  <p className="text-gray-300">
+                  <p style={{ color: "var(--text-muted)" }}>
                     Export attendance records to CSV format for easy analysis
                     and record-keeping. Generate detailed reports of arrival and
                     departure times for any time period.
@@ -152,10 +175,13 @@ const QTick = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <h3
+                    className="text-lg font-semibold mb-2"
+                    style={{ color: "var(--color-blue)" }}
+                  >
                     ⚡ Real-time Validation
                   </h3>
-                  <p className="text-gray-300">
+                  <p style={{ color: "var(--text-muted)" }}>
                     Instant attendance validation with animated success and
                     error notifications. Battery optimization awareness ensures
                     smooth operation without draining your device.
@@ -163,10 +189,13 @@ const QTick = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <h3
+                    className="text-lg font-semibold mb-2"
+                    style={{ color: "var(--color-blue)" }}
+                  >
                     💬 WhatsApp Business Integration
                   </h3>
-                  <p className="text-gray-300">
+                  <p style={{ color: "var(--text-muted)" }}>
                     Send automatic arrival and departure notifications via
                     WhatsApp Business. Keep parents, managers, or administrators
                     instantly informed with real-time attendance updates
@@ -176,11 +205,17 @@ const QTick = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-white mb-3">
+                <h3
+                  className="text-lg font-semibold mb-3"
+                  style={{ color: "var(--color-blue)" }}
+                >
                   ✨ Key Features:
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <ul className="list-disc pl-5 space-y-1 text-gray-300">
+                  <ul
+                    className="list-disc pl-5 space-y-1"
+                    style={{ color: "var(--text-muted)" }}
+                  >
                     <li>QR code scanning for attendance tracking</li>
                     <li>Arrival and departure time recording</li>
                     <li>WhatsApp Business notification integration</li>
@@ -188,7 +223,10 @@ const QTick = () => {
                     <li>Offline data storage with SQLite</li>
                     <li>Audio and visual feedback for successful scans</li>
                   </ul>
-                  <ul className="list-disc pl-5 space-y-1 text-gray-300">
+                  <ul
+                    className="list-disc pl-5 space-y-1"
+                    style={{ color: "var(--text-muted)" }}
+                  >
                     <li>Animated success/error notifications</li>
                     <li>Local data persistence for attendance records</li>
                     <li>Battery optimization awareness</li>
@@ -199,11 +237,17 @@ const QTick = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Perfect For:
+              <div
+                className="border-2 border-green-500 p-4"
+                style={{ backgroundColor: "var(--bg-secondary)" }}
+              >
+                <h3
+                  className="text-lg font-semibold mb-2"
+                  style={{ color: "var(--color-green)" }}
+                >
+                  <span className="text-green-400">&gt;</span> Perfect For:
                 </h3>
-                <p className="text-gray-300">
+                <p style={{ color: "var(--text-muted)" }}>
                   Schools tracking student attendance, businesses monitoring
                   employee check-ins and check-outs, event organizers managing
                   participant attendance, coworking spaces tracking member
@@ -215,7 +259,12 @@ const QTick = () => {
           </div>
         </motion.div>
 
-        <h2 className="text-2xl font-bold text-white mb-6">Screenshots</h2>
+        <h2
+          className="text-2xl font-bold mb-6"
+          style={{ color: "var(--color-blue)" }}
+        >
+          <span className="text-gray-500">$</span> Screenshots
+        </h2>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -234,7 +283,8 @@ const QTick = () => {
                   delay: 0.5,
                   duration: 0.5,
                 }}
-                className="flex items-center justify-start bg-gray-700 p-2 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                className="flex items-center justify-start border-2 border-gray-700 hover:border-blue-500 p-2 shadow-md transition-all"
+                style={{ backgroundColor: "var(--bg-secondary)" }}
               >
                 <img
                   src={screenshot}

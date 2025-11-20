@@ -59,4 +59,22 @@
       <image:caption>WeatherFast mobile application icon</image:caption>
     </image:image>
   </url>
+
+  <!-- QTick Project -->
+  <url>
+    <loc>https://aadish.dev/projects/qtick</loc>
+    <lastmod>2025-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aadish.dev/assets/screenshots/qtick/screen1.png</image:loc>
+      <image:title>QTick App Screenshot</image:title>
+      <image:caption>QTick task management application interface</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aadish.dev/assets/appicons/qtick.png</image:loc>
+      <image:title>QTick App Icon</image:title>
+      <image:caption>QTick mobile application icon</image:caption>
+    </image:image>
+  </url>
 </urlset>

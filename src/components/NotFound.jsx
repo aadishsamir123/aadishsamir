@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { FaHome, FaArrowRight } from 'react-icons/fa';
-import SEOHead from '../components/SEOHead';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FaHome, FaArrowRight } from "react-icons/fa";
+import SEOHead from "../components/SEOHead";
 
 const NotFound = () => {
   return (
@@ -13,40 +13,48 @@ const NotFound = () => {
         url="https://aadish.dev/404"
         noIndex={true}
       />
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center font-mono">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-md mx-auto"
         >
-          <motion.h1 
-            className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500 mb-4"
+          <motion.h1
+            className="text-8xl font-bold mb-4"
+            style={{ color: "var(--color-red)" }}
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           >
-            404
+            <span className="text-gray-500">ERROR:</span> 404
           </motion.h1>
-          
+
           <motion.h2
-            className="text-3xl font-bold text-white mb-6"
+            className="text-3xl font-bold mb-6"
+            style={{ color: "var(--color-blue)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Page Not Found
+            <span className="text-red-500">//</span> Page Not Found
           </motion.h2>
-          
+
           <motion.p
-            className="text-lg text-gray-300 mb-8"
+            className="text-lg mb-8"
+            style={{ color: "var(--text-muted)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Sorry, the page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+            <span className="text-green-400">/*</span>
+            <br />
+            Sorry, the page you're looking for doesn't exist. It might have been
+            moved, deleted, or you entered the wrong URL.
+            <br />
+            <span className="text-green-400">*/</span>
           </motion.p>
-          
+
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0 }}
@@ -55,16 +63,16 @@ const NotFound = () => {
           >
             <Link
               to="/"
-              className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-full transition-colors flex items-center gap-2 justify-center"
+              className="border-2 border-blue-500 hover:bg-blue-500/20 text-blue-400 py-3 px-6 transition-colors flex items-center gap-2 justify-center"
             >
-              <FaHome /> Go Home
+              <FaHome /> [Go Home]
             </Link>
-            
+
             <Link
               to="/projects"
-              className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-full transition-colors flex items-center gap-2 justify-center"
+              className="border-2 border-green-500 hover:bg-green-500/20 text-green-400 py-3 px-6 transition-colors flex items-center gap-2 justify-center"
             >
-              View Projects <FaArrowRight />
+              [View Projects] <FaArrowRight />
             </Link>
           </motion.div>
         </motion.div>

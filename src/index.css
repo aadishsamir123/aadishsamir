@@ -1,27 +1,82 @@
 @import "tailwindcss";
 
+/* Light mode variables (default) */
+:root {
+  --bg-primary: #f6f8fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f3f5;
+  --text-primary: #24292f;
+  --text-secondary: #57606a;
+  --text-muted: #656d76;
+  --border-color: #d0d7de;
+  --border-hover: #58a6ff;
+  --color-blue: #0969da;
+  --color-green: #1a7f37;
+  --color-red: #cf222e;
+  --color-gray: #656d76;
+  --scrollbar-track: #f6f8fa;
+  --scrollbar-thumb: #d0d7de;
+  --scrollbar-thumb-hover: #afb8c1;
+}
+
+/* Dark mode variables */
+.dark {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --text-muted: #8b949e;
+  --border-color: #30363d;
+  --border-hover: #58a6ff;
+  --color-blue: #58a6ff;
+  --color-green: #3fb950;
+  --color-red: #f85149;
+  --color-gray: #8b949e;
+  --scrollbar-track: #161b22;
+  --scrollbar-thumb: #30363d;
+  --scrollbar-thumb-hover: #484f58;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", Menlo, Monaco,
+    Consolas, "Courier New", monospace;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - terminal style */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: var(--scrollbar-track);
+  border-left: 1px solid var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 4px;
+  background: var(--scrollbar-thumb);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--scrollbar-thumb-hover);
+  border-color: var(--border-hover);
+}
+
+/* Terminal-style selection */
+::selection {
+  background-color: rgba(88, 166, 255, 0.2);
+  color: var(--color-blue);
+}
+
+::-moz-selection {
+  background-color: rgba(88, 166, 255, 0.2);
+  color: var(--color-blue);
 }
