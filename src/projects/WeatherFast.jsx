@@ -68,13 +68,11 @@ const WeatherFast = () => {
 
         <motion.div
           layoutId="card-container-weatherfast"
-          transition={{ delay: 0.01, duration: 0.3 }}
           className="flex flex-col md:flex-row items-start gap-8 mb-12 border-2 border-gray-700 p-6 shadow-lg"
           style={{ backgroundColor: "var(--bg-secondary)" }}
         >
           <motion.img
             layoutId="card-image-weatherfast"
-            transition={{ delay: 0.01, duration: 0.3 }}
             src="/assets/appicons/weatherfast.png"
             alt="WeatherFast"
             className="w-32 h-32 rounded-2xl shadow-lg"
@@ -83,7 +81,6 @@ const WeatherFast = () => {
           <div>
             <motion.h1
               layoutId="card-title-weatherfast"
-              transition={{ delay: 0.01, duration: 0.3 }}
               className="text-4xl font-bold mb-4"
               style={{ color: "var(--color-blue)" }}
             >
@@ -106,7 +103,6 @@ const WeatherFast = () => {
             />
             <motion.p
               layoutId="card-description-weatherfast"
-              transition={{ delay: 0.01, duration: 0.3 }}
               className="text-lg mb-6 max-w-2xl space-y-4 leading-relaxed"
               style={{ color: "var(--text-muted)" }}
             >

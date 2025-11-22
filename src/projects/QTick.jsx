@@ -70,13 +70,11 @@ const QTick = () => {
 
         <motion.div
           layoutId="card-container-qtick"
-          transition={{ delay: 0.01, duration: 0.3 }}
           className="flex flex-col md:flex-row items-start gap-8 mb-12 border-2 border-gray-700 p-6 shadow-lg"
           style={{ backgroundColor: "var(--bg-secondary)" }}
         >
           <motion.img
             layoutId="card-image-qtick"
-            transition={{ delay: 0.01, duration: 0.3 }}
             src="/assets/appicons/qtick.png"
             alt="qtick"
             className="w-32 h-32 rounded-2xl shadow-lg"
@@ -85,7 +83,6 @@ const QTick = () => {
           <div>
             <motion.h1
               layoutId="card-title-qtick"
-              transition={{ delay: 0.01, duration: 0.3 }}
               className="text-4xl font-bold mb-4"
               style={{ color: "var(--color-blue)" }}
             >
@@ -109,7 +106,6 @@ const QTick = () => {
 
             <motion.div
               layoutId="card-description-qtick"
-              transition={{ delay: 0.01, duration: 0.3 }}
               className="text-lg mb-6 max-w-4xl space-y-6 leading-relaxed"
               style={{ color: "var(--text-muted)" }}
             >

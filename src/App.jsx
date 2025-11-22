@@ -4,14 +4,13 @@ import {
   Link,
   Route,
   Routes,
-  useNavigate,
+  useLocation,
 } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaGlobe, FaGooglePlay, FaInfoCircle } from "react-icons/fa";
 import Navbar from "./components/Navbar";
 import SEOHead from "./components/SEOHead";
 import NotFound from "./components/NotFound";
-import OptimizedImage from "./components/OptimizedImage";
 import LoadingScreen from "./components/LoadingScreen";
 import ThemeToggle from "./components/ThemeToggle";
 import PropTypes from "prop-types";
@@ -24,23 +23,7 @@ import QRAttendancePrivacyPolicy from "./legal/projects/qrattendance/QRAttendanc
 import NammaKannadaPrivacyPolicy from "./legal/projects/nammakannada/NammaKannadaPrivacyPolicy.jsx";
 
 const PageWrapper = ({ children }) => {
-  const pageVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-  };
-
-  return (
-    <motion.div
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.5 }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <>{children}</>;
 };
 
 PageWrapper.propTypes = {
@@ -161,176 +144,179 @@ const Home = () => {
 };
 
 const ProjectCard = ({ title, description, icon, links }) => {
-  const navigate = useNavigate();
-
   return (
-    <motion.div
-      onClick={() => navigate(`/projects/${links.project_page.url}`)}
-      className="cursor-pointer"
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+    <Link
+      to={`/projects/${links.project_page.url}`}
+      style={{ textDecoration: "none" }}
     >
       <motion.div
-        layoutId={`card-container-${links.project_page}`}
-        transition={{ delay: 0.01, duration: 0.3 }}
-        className="border-2 p-4 sm:p-6 shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 transition-colors"
-        style={{
-          borderColor: "var(--border-color)",
-          backgroundColor: "var(--bg-secondary)",
-        }}
+        className="cursor-pointer"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
       >
-        <OptimizedImage
-          layoutId={`card-image-${links.project_page}`}
-          src={icon}
-          alt={`${title} app icon - ${description}`}
-          className="w-16 h-16 rounded-full flex-shrink-0"
-          width={64}
-          height={64}
-          loading="eager"
-        />
-        <div className="flex-1 text-center sm:text-left w-full overflow-hidden">
-          <motion.h2
-            layoutId={`card-title-${links.project_page}`}
-            transition={{ delay: 0.01, duration: 0.3 }}
-            className="text-2xl font-bold font-mono break-words"
-            style={{ color: "var(--color-blue)" }}
-          >
-            {title}
-          </motion.h2>
-          <motion.p
-            layoutId={`card-description-${links.project_page}`}
-            transition={{ delay: 0.01, duration: 0.3 }}
-            className="font-mono mt-2 break-words"
-            style={{ color: "var(--text-muted)" }}
-          >
-            <span className="text-green-400">//</span> {description}
-          </motion.p>
-          <motion.div
-            className="mt-4 flex flex-wrap items-center justify-center sm:justify-start gap-2"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {links.web && (links.web.url || links.web.comingSoon) && (
-              <button
-                className="h-10 flex items-center gap-2 px-3 border-2 font-mono transition-all text-sm sm:text-base"
-                style={{
-                  borderColor: links.web.comingSoon
-                    ? "var(--border-color)"
-                    : "var(--color-blue)",
-                  color: links.web.comingSoon
-                    ? "var(--text-muted)"
-                    : "var(--color-blue)",
-                  cursor: links.web.comingSoon ? "not-allowed" : "pointer",
-                  opacity: links.web.comingSoon ? 0.5 : 1,
-                }}
-                disabled={links.web.comingSoon}
-                onClick={() =>
-                  links.web.url && window.open(links.web.url, "_blank")
-                }
-                onMouseEnter={(e) =>
-                  !links.web.comingSoon &&
-                  (e.currentTarget.style.backgroundColor =
-                    "rgba(88, 166, 255, 0.1)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = "transparent")
-                }
-              >
-                <FaGlobe className="flex-shrink-0" />
-                <span className="whitespace-nowrap">
-                  {links.web.comingSoon
-                    ? "[Web Coming Soon]"
-                    : "[View Website]"}
-                </span>
-              </button>
-            )}
-
-            {links.playStore &&
-              (links.playStore.url || links.playStore.comingSoon) && (
+        <motion.div
+          layoutId={`card-container-${links.project_page.url}`}
+          className="border-2 p-4 sm:p-6 shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 transition-colors"
+          style={{
+            borderColor: "var(--border-color)",
+            backgroundColor: "var(--bg-secondary)",
+          }}
+        >
+          <motion.img
+            layoutId={`card-image-${links.project_page.url}`}
+            src={icon}
+            alt={`${title} app icon - ${description}`}
+            className="w-16 h-16 rounded-full flex-shrink-0"
+            width={64}
+            height={64}
+            loading="eager"
+          />
+          <div className="flex-1 text-center sm:text-left w-full overflow-hidden">
+            <motion.h2
+              layoutId={`card-title-${links.project_page.url}`}
+              className="text-2xl font-bold font-mono break-words"
+              style={{ color: "var(--color-blue)" }}
+            >
+              {title}
+            </motion.h2>
+            <motion.p
+              layoutId={`card-description-${links.project_page.url}`}
+              className="font-mono mt-2 break-words"
+              style={{ color: "var(--text-muted)" }}
+            >
+              <span className="text-green-400">//</span> {description}
+            </motion.p>
+            <motion.div
+              className="mt-4 flex flex-wrap items-center justify-center sm:justify-start gap-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {links.web && (links.web.url || links.web.comingSoon) && (
                 <button
-                  className="transition-all text-sm sm:text-base font-mono"
+                  className="h-10 flex items-center gap-2 px-3 border-2 font-mono transition-all text-sm sm:text-base"
                   style={{
-                    height: links.playStore.comingSoon ? "40px" : "40px",
-                    borderWidth: links.playStore.comingSoon ? "2px" : "0",
-                    borderColor: links.playStore.comingSoon
+                    borderColor: links.web.comingSoon
                       ? "var(--border-color)"
-                      : "transparent",
-                    color: links.playStore.comingSoon
+                      : "var(--color-blue)",
+                    color: links.web.comingSoon
                       ? "var(--text-muted)"
-                      : "inherit",
-                    cursor: links.playStore.comingSoon
-                      ? "not-allowed"
-                      : "pointer",
-                    opacity: links.playStore.comingSoon ? 0.5 : 1,
+                      : "var(--color-blue)",
+                    cursor: links.web.comingSoon ? "not-allowed" : "pointer",
+                    opacity: links.web.comingSoon ? 0.5 : 1,
                   }}
-                  disabled={links.playStore.comingSoon}
+                  disabled={links.web.comingSoon}
                   onClick={() =>
-                    links.playStore.url &&
-                    window.open(links.playStore.url, "_blank")
+                    links.web.url && window.open(links.web.url, "_blank")
                   }
                   onMouseEnter={(e) =>
-                    !links.playStore.comingSoon &&
-                    (e.currentTarget.style.opacity = "0.8")
+                    !links.web.comingSoon &&
+                    (e.currentTarget.style.backgroundColor =
+                      "rgba(88, 166, 255, 0.1)")
                   }
                   onMouseLeave={(e) =>
-                    !links.playStore.comingSoon &&
-                    (e.currentTarget.style.opacity = "1")
+                    (e.currentTarget.style.backgroundColor = "transparent")
                   }
                 >
-                  {links.playStore.comingSoon ? (
-                    <div className="flex items-center gap-2 px-3">
-                      <FaGooglePlay className="flex-shrink-0" />
-                      <span className="whitespace-nowrap">
-                        [Android coming soon]
-                      </span>
-                    </div>
-                  ) : (
-                    <img
-                      src="/assets/google-play-badge.png"
-                      alt="Get it on Google Play"
-                      className="h-full"
-                    />
-                  )}
+                  <FaGlobe className="flex-shrink-0" />
+                  <span className="whitespace-nowrap">
+                    {links.web.comingSoon
+                      ? "[Web Coming Soon]"
+                      : "[View Website]"}
+                  </span>
                 </button>
               )}
 
-            {links.github && (links.github.url || links.github.comingSoon) && (
-              <button
-                className="h-10 flex items-center gap-2 px-3 border-2 font-mono transition-all text-sm sm:text-base"
-                style={{
-                  borderColor: links.github.comingSoon
-                    ? "var(--border-color)"
-                    : "var(--text-secondary)",
-                  color: links.github.comingSoon
-                    ? "var(--text-muted)"
-                    : "var(--text-secondary)",
-                  cursor: links.github.comingSoon ? "not-allowed" : "pointer",
-                  opacity: links.github.comingSoon ? 0.5 : 1,
-                }}
-                disabled={links.github.comingSoon}
-                onClick={() =>
-                  links.github.url && window.open(links.github.url, "_blank")
-                }
-                onMouseEnter={(e) =>
-                  !links.github.comingSoon &&
-                  (e.currentTarget.style.backgroundColor =
-                    "rgba(128, 128, 128, 0.1)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = "transparent")
-                }
-              >
-                <FaGithub className="flex-shrink-0" />
-                <span className="whitespace-nowrap">
-                  {links.github.comingSoon
-                    ? "[Source Code Coming Soon]"
-                    : "[View Source]"}
-                </span>
-              </button>
-            )}
-          </motion.div>
-        </div>
+              {links.playStore &&
+                (links.playStore.url || links.playStore.comingSoon) && (
+                  <button
+                    className="transition-all text-sm sm:text-base font-mono"
+                    style={{
+                      height: links.playStore.comingSoon ? "40px" : "40px",
+                      borderWidth: links.playStore.comingSoon ? "2px" : "0",
+                      borderColor: links.playStore.comingSoon
+                        ? "var(--border-color)"
+                        : "transparent",
+                      color: links.playStore.comingSoon
+                        ? "var(--text-muted)"
+                        : "inherit",
+                      cursor: links.playStore.comingSoon
+                        ? "not-allowed"
+                        : "pointer",
+                      opacity: links.playStore.comingSoon ? 0.5 : 1,
+                    }}
+                    disabled={links.playStore.comingSoon}
+                    onClick={() =>
+                      links.playStore.url &&
+                      window.open(links.playStore.url, "_blank")
+                    }
+                    onMouseEnter={(e) =>
+                      !links.playStore.comingSoon &&
+                      (e.currentTarget.style.opacity = "0.8")
+                    }
+                    onMouseLeave={(e) =>
+                      !links.playStore.comingSoon &&
+                      (e.currentTarget.style.opacity = "1")
+                    }
+                  >
+                    {links.playStore.comingSoon ? (
+                      <div className="flex items-center gap-2 px-3">
+                        <FaGooglePlay className="flex-shrink-0" />
+                        <span className="whitespace-nowrap">
+                          [Android coming soon]
+                        </span>
+                      </div>
+                    ) : (
+                      <img
+                        src="/assets/google-play-badge.png"
+                        alt="Get it on Google Play"
+                        className="h-full"
+                      />
+                    )}
+                  </button>
+                )}
+
+              {links.github &&
+                (links.github.url || links.github.comingSoon) && (
+                  <button
+                    className="h-10 flex items-center gap-2 px-3 border-2 font-mono transition-all text-sm sm:text-base"
+                    style={{
+                      borderColor: links.github.comingSoon
+                        ? "var(--border-color)"
+                        : "var(--text-secondary)",
+                      color: links.github.comingSoon
+                        ? "var(--text-muted)"
+                        : "var(--text-secondary)",
+                      cursor: links.github.comingSoon
+                        ? "not-allowed"
+                        : "pointer",
+                      opacity: links.github.comingSoon ? 0.5 : 1,
+                    }}
+                    disabled={links.github.comingSoon}
+                    onClick={() =>
+                      links.github.url &&
+                      window.open(links.github.url, "_blank")
+                    }
+                    onMouseEnter={(e) =>
+                      !links.github.comingSoon &&
+                      (e.currentTarget.style.backgroundColor =
+                        "rgba(128, 128, 128, 0.1)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.backgroundColor = "transparent")
+                    }
+                  >
+                    <FaGithub className="flex-shrink-0" />
+                    <span className="whitespace-nowrap">
+                      {links.github.comingSoon
+                        ? "[Source Code Coming Soon]"
+                        : "[View Source]"}
+                    </span>
+                  </button>
+                )}
+            </motion.div>
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </Link>
   );
 };
 
@@ -570,6 +556,108 @@ const Projects = () => {
   );
 };
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <PageWrapper>
+              <Home />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PageWrapper>
+              <About />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <PageWrapper>
+              <Projects />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/projects/weatherfast"
+          element={
+            <PageWrapper>
+              <WeatherFast />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/projects/shopsync"
+          element={
+            <PageWrapper>
+              <ShopSync />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/projects/qtick"
+          element={
+            <PageWrapper>
+              <QTick />
+            </PageWrapper>
+          }
+        />
+
+        <Route
+          path="/legal/projects/shopsync/privacypolicy"
+          element={
+            <PageWrapper>
+              <ShopSyncPrivacyPolicy />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/legal/projects/shopsync/disclaimer"
+          element={
+            <PageWrapper>
+              <ShopSyncDisclaimer />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/legal/projects/qrattendance/privacypolicy"
+          element={
+            <PageWrapper>
+              <QRAttendancePrivacyPolicy />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/legal/projects/nammakannada/privacypolicy"
+          element={
+            <PageWrapper>
+              <NammaKannadaPrivacyPolicy />
+            </PageWrapper>
+          }
+        />
+
+        {/* 404 Catch-all route */}
+        <Route
+          path="*"
+          element={
+            <PageWrapper>
+              <NotFound />
+            </PageWrapper>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -598,101 +686,7 @@ function App() {
         <Navbar />
         <ThemeToggle />
         <main>
-          <AnimatePresence mode="wait" initial={false}>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <PageWrapper>
-                    <Home />
-                  </PageWrapper>
-                }
-              />
-              <Route
-                path="/about"
-                element={
-                  <PageWrapper>
-                    <About />
-                  </PageWrapper>
-                }
-              />
-              <Route
-                path="/projects"
-                element={
-                  <PageWrapper>
-                    <Projects />
-                  </PageWrapper>
-                }
-              />
-              <Route
-                path="/projects/weatherfast"
-                element={
-                  <PageWrapper>
-                    <WeatherFast />
-                  </PageWrapper>
-                }
-              />
-              <Route
-                path="/projects/shopsync"
-                element={
-                  <PageWrapper>
-                    <ShopSync />
-                  </PageWrapper>
-                }
-              />
-              <Route
-                path="/projects/qtick"
-                element={
-                  <PageWrapper>
-                    <QTick />
-                  </PageWrapper>
-                }
-              />
-
-              <Route
-                path="/legal/projects/shopsync/privacypolicy"
-                element={
-                  <PageWrapper>
-                    <ShopSyncPrivacyPolicy />
-                  </PageWrapper>
-                }
-              />
-              <Route
-                path="/legal/projects/shopsync/disclaimer"
-                element={
-                  <PageWrapper>
-                    <ShopSyncDisclaimer />
-                  </PageWrapper>
-                }
-              />
-              <Route
-                path="/legal/projects/qrattendance/privacypolicy"
-                element={
-                  <PageWrapper>
-                    <QRAttendancePrivacyPolicy />
-                  </PageWrapper>
-                }
-              />
-              <Route
-                path="/legal/projects/nammakannada/privacypolicy"
-                element={
-                  <PageWrapper>
-                    <NammaKannadaPrivacyPolicy />
-                  </PageWrapper>
-                }
-              />
-
-              {/* 404 Catch-all route */}
-              <Route
-                path="*"
-                element={
-                  <PageWrapper>
-                    <NotFound />
-                  </PageWrapper>
-                }
-              />
-            </Routes>
-          </AnimatePresence>
+          <AnimatedRoutes />
         </main>
       </div>
     </BrowserRouter>
