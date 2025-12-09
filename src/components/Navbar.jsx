@@ -73,6 +73,7 @@ const Navbar = () => {
                 { name: "Home", path: "/" },
                 { name: "About", path: "/about" },
                 { name: "Projects", path: "/projects" },
+                { name: "Blog", path: "https://blog.aadish.dev" },
               ].map((item) => (
                 <div key={item.name} className="relative">
                   <motion.div
@@ -80,21 +81,35 @@ const Navbar = () => {
                     whileTap={{ scale: 0.95 }}
                     className="relative"
                   >
-                    <Link
-                      to={item.path}
-                      className="text-base font-medium transition-colors font-mono"
-                      style={{
-                        color:
-                          location.pathname === item.path
-                            ? "var(--color-green)"
-                            : "var(--text-muted)",
-                      }}
-                    >
-                      {location.pathname === item.path
-                        ? `[${item.name}]`
-                        : item.name}
-                    </Link>
-                    {location.pathname === item.path && (
+                    {item.external ? (
+                      <a
+                        href={item.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base font-medium transition-colors font-mono"
+                        style={{
+                          color: "var(--text-muted)",
+                        }}
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        className="text-base font-medium transition-colors font-mono"
+                        style={{
+                          color:
+                            location.pathname === item.path
+                              ? "var(--color-green)"
+                              : "var(--text-muted)",
+                        }}
+                      >
+                        {location.pathname === item.path
+                          ? `[${item.name}]`
+                          : item.name}
+                      </Link>
+                    )}
+                    {!item.external && location.pathname === item.path && (
                       <motion.div
                         layoutId="navbar-underline"
                         className="absolute left-0 right-0 h-0.5 bg-green-400"
@@ -151,6 +166,7 @@ const Navbar = () => {
                     { name: "Home", path: "/" },
                     { name: "About", path: "/about" },
                     { name: "Projects", path: "/projects" },
+                    { name: "Blog", path: "https://blog.aadish.dev", external: true },
                   ].map((item, index) => (
                     <motion.div
                       key={item.name}
@@ -158,21 +174,36 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <Link
-                        to={item.path}
-                        onClick={toggleMenu}
-                        className="text-2xl font-medium transition-all font-mono hover:scale-110"
-                        style={{
-                          color:
-                            location.pathname === item.path
-                              ? "var(--color-green)"
-                              : "var(--text-muted)",
-                        }}
-                      >
-                        {location.pathname === item.path
-                          ? `[${item.name}]`
-                          : item.name}
-                      </Link>
+                      {item.external ? (
+                        <a
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={toggleMenu}
+                          className="text-2xl font-medium transition-all font-mono hover:scale-110"
+                          style={{
+                            color: "var(--text-muted)",
+                          }}
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <Link
+                          to={item.path}
+                          onClick={toggleMenu}
+                          className="text-2xl font-medium transition-all font-mono hover:scale-110"
+                          style={{
+                            color:
+                              location.pathname === item.path
+                                ? "var(--color-green)"
+                                : "var(--text-muted)",
+                          }}
+                        >
+                          {location.pathname === item.path
+                            ? `[${item.name}]`
+                            : item.name}
+                        </Link>
+                      )}
                     </motion.div>
                   ))}
                 </div>
