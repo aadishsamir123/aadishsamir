@@ -26,8 +26,7 @@ const Navbar = () => {
               className="text-2xl font-semibold tracking-wide font-mono"
               style={{ color: "var(--color-blue)" }}
             >
-              <span style={{ color: "var(--text-muted)" }}>$</span> Aadish Samir{" "}
-              <span style={{ color: "var(--color-green)" }}>| Dev</span>
+              <span style={{ color: "var(--text-muted)" }}>$</span> Aadish Samir
             </Link>
 
             {/* Mobile Menu Button */}
@@ -158,8 +157,7 @@ const Navbar = () => {
                     style={{ color: "var(--color-blue)" }}
                   >
                     <span style={{ color: "var(--text-muted)" }}>$</span> Aadish
-                    Samir{" "}
-                    <span style={{ color: "var(--color-green)" }}>| Dev</span>
+                    Samir
                   </motion.div>
 
                   {[

@@ -61,7 +61,7 @@ const LoadingScreen = () => {
             </motion.div>
             <p className="text-sm text-[var(--text-muted)]">
               <span className="text-green-400">//</span> Initializing
-              terminal...
+              website...
             </p>
           </div>
         </div>
