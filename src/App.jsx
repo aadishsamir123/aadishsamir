@@ -6,6 +6,8 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
+import { ChristmasEffects } from "react-christmas-effects";
+import "react-christmas-effects/dist/index.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaGlobe, FaGooglePlay, FaInfoCircle } from "react-icons/fa";
 import Navbar from "./components/Navbar";
@@ -676,6 +678,10 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ChristmasEffects
+        snowflakeCount={50}
+        showText={false}
+      />
       <div
         className="min-h-screen font-mono"
         style={{
