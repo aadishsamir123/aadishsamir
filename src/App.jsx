@@ -521,7 +521,7 @@ const Projects = () => {
                   url: "https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync",
                 },
                 github: {
-                  url: "https://github.com/aadishsamir123/asdev-shopsync",
+                  url: "https://github.com/ASDev-Official/shopsync",
                 },
                 project_page: { url: "shopsync" },
               }}
@@ -535,7 +535,7 @@ const Projects = () => {
                   url: "https://play.google.com/store/apps/details?id=com.aadishsamir.qr_attendance",
                 },
                 github: {
-                  url: "https://github.com/aadishsamir123/asdev-qtick",
+                  url: "https://github.com/ASDev-Official/qtick",
                 },
                 project_page: { url: "qtick" },
               }}
@@ -545,8 +545,12 @@ const Projects = () => {
               description="A simple and clean weather app. Built using Flutter."
               icon="/assets/appicons/weatherfast.png"
               links={{
+                web: { comingSoon: true },
                 playStore: {
                   url: "https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast",
+                },
+                github: {
+                  url: "https://github.com/ASDev-Official/weatherfast",
                 },
                 project_page: { url: "weatherfast" },
               }}
