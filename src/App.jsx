@@ -516,7 +516,7 @@ const Projects = () => {
               description="Share shopping lists with family and friends. Built using Flutter."
               icon="/assets/appicons/shopsync.png"
               links={{
-                web: { url: "https://app.shopsync.aadish.dev" },
+                web: { url: "https://shopsync.aadish.dev" },
                 playStore: {
                   url: "https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync",
                 },
@@ -545,7 +545,7 @@ const Projects = () => {
               description="A simple and clean weather app. Built using Flutter."
               icon="/assets/appicons/weatherfast.png"
               links={{
-                web: { comingSoon: true },
+                web: { url: "https://weatherfast.aadish.dev" },
                 playStore: {
                   url: "https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast",
                 },

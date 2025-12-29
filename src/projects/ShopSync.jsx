@@ -100,7 +100,7 @@ const ShopSync = () => {
               className="h-10 flex items-center gap-2 px-4 border-2 border-blue-500 hover:bg-blue-500/20 transition-all text-sm sm:text-base"
               style={{ color: "var(--color-blue)" }}
               onClick={() =>
-                window.open("https://app.shopsync.aadish.dev", "_blank")
+                window.open("https://shopsync.aadish.dev", "_blank")
               }
             >
               <FaGlobe className="flex-shrink-0" />
@@ -119,7 +119,7 @@ const ShopSync = () => {
               onClick={() =>
                 window.open(
                   "https://play.google.com/store/apps/details?id=com.aadishsamir.shopsync",
-                  "_blank"
+                  "_blank",
                 )
               }
             />

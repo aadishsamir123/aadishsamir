@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaGlobe } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
 
@@ -87,6 +87,22 @@ const WeatherFast = () => {
               <span className="text-gray-500">$</span> WeatherFast
             </motion.h1>
 
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="h-10 flex items-center gap-2 px-4 border-2 border-blue-500 hover:bg-blue-500/20 transition-all text-sm sm:text-base"
+              style={{ color: "var(--color-blue)" }}
+              onClick={() =>
+                window.open("https://weatherfast.aadish.dev", "_blank")
+              }
+            >
+              <FaGlobe className="flex-shrink-0" />
+              <span className="whitespace-nowrap">[View Website]</span>
+            </motion.button>
+
+            <br />
+
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -97,7 +113,7 @@ const WeatherFast = () => {
               onClick={() =>
                 window.open(
                   "https://play.google.com/store/apps/details?id=com.aadishsamir.weatherfast",
-                  "_blank"
+                  "_blank",
                 )
               }
             />
@@ -122,7 +138,7 @@ const WeatherFast = () => {
                 <li>Live weather details</li>
                 <li>Forecasts</li>
                 <li>
-                  Recommended advice for staying safe and dry in the weather
+                  AI-powered insights on the weather so you can plan ahead
                 </li>
               </ul>
 
