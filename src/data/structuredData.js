@@ -48,7 +48,7 @@ export const organizationStructuredData = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    email: "asdev.feedback@gmail.com",
+    email: "support@aadish.dev",
     contactType: "customer service",
   },
   sameAs: ["https://github.com/aadishsamir123"],

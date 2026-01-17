@@ -2,19 +2,19 @@ import "react";
 import "../../LegalTexts.css";
 import SEOHead from "../../../components/SEOHead";
 
-const ShopSyncPrivacyPolicy = () => {
+const LastMinutePrivacyPolicy = () => {
   return (
     <>
       <SEOHead
-        title="ShopSync Privacy Policy"
-        description="Privacy Policy for ShopSync app explaining how we collect, use, and protect your personal information while using our collaborative shopping list service."
-        keywords="ShopSync Privacy Policy, Data Protection, App Privacy, Shopping List Privacy"
-        url="https://aadish.dev/legal/projects/shopsync/privacypolicy"
+        title="LastMinute Privacy Policy"
+        description="Privacy Policy for LastMinute app explaining how we collect, use, and protect your personal information."
+        keywords="LastMinute Privacy Policy, Data Protection, App Privacy"
+        url="https://aadish.dev/legal/projects/lastminute/privacypolicy"
         noIndex={true}
       />
       <div className="privacy-container">
         <div className="privacy-card">
-          <h1 className="privacy-title">ShopSync Privacy Policy</h1>
+          <h1 className="privacy-title">LastMinute Privacy Policy</h1>
           <p className="privacy-date">Last updated: January 17, 2026</p>
           <p className="privacy-text">
             This Privacy Policy describes Our policies and procedures on the
@@ -40,7 +40,7 @@ const ShopSyncPrivacyPolicy = () => {
           </h2>
           <h3 className="privacy-section-title">Interpretation</h3>
           <p className="privacy-text">
-            The words of which the initial letter is capitalized have meanings
+            The words whose initial letters are capitalized have meanings
             defined under the following conditions. The following definitions
             shall have the same meaning regardless of whether they appear in
             singular or in plural.
@@ -59,7 +59,7 @@ const ShopSyncPrivacyPolicy = () => {
             <li>
               <p className="privacy-text">
                 <strong>Affiliate</strong> means an entity that controls, is
-                controlled by or is under common control with a party, where
+                controlled by, or is under common control with a party, where
                 &quot;control&quot; means ownership of 50% or more of the
                 shares, equity interest or other securities entitled to vote for
                 election of directors or other managing authority.
@@ -67,7 +67,7 @@ const ShopSyncPrivacyPolicy = () => {
             </li>
             <li>
               <p className="privacy-text">
-                <strong>Application</strong> refers to ShopSync, the software
+                <strong>Application</strong> refers to LastMinute, the software
                 program provided by the Company.
               </p>
             </li>
@@ -75,7 +75,7 @@ const ShopSyncPrivacyPolicy = () => {
               <p className="privacy-text">
                 <strong>Company</strong> (referred to as either &quot;the
                 Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot;
-                in this Agreement) refers to ShopSync.
+                in this Agreement) refers to LastMinute.
               </p>
             </li>
             <li>
@@ -94,7 +94,7 @@ const ShopSyncPrivacyPolicy = () => {
             <li>
               <p className="privacy-text">
                 <strong>Device</strong> means any device that can access the
-                Service such as a computer, a cellphone or a digital tablet.
+                Service such as a computer, a cell phone or a digital tablet.
               </p>
             </li>
             <li>
@@ -130,13 +130,13 @@ const ShopSyncPrivacyPolicy = () => {
             </li>
             <li>
               <p className="privacy-text">
-                <strong>Website</strong> refers to ShopSync, accessible from{" "}
+                <strong>Website</strong> refers to LastMinute, accessible from{" "}
                 <a
-                  href="https://as-shopsync.pages.dev"
+                  href="https://lastminute.aadish.dev"
                   rel="external nofollow noopener"
                   target="_blank"
                 >
-                  https://as-shopsync.pages.dev
+                  https://lastminute.aadish.dev
                 </a>
               </p>
             </li>
@@ -185,14 +185,14 @@ const ShopSyncPrivacyPolicy = () => {
           <p className="privacy-text">
             When You access the Service by or through a mobile device, We may
             collect certain information automatically, including, but not
-            limited to, the type of mobile device You use, Your mobile device
-            unique ID, the IP address of Your mobile device, Your mobile
-            operating system, the type of mobile Internet browser You use,
-            unique device identifiers and other diagnostic data.
+            limited to, the type of mobile device You use, Your mobile
+            device&#39;s unique ID, the IP address of Your mobile device, Your
+            mobile operating system, the type of mobile Internet browser You
+            use, unique device identifiers and other diagnostic data.
           </p>
           <p className="privacy-text">
             We may also collect information that Your browser sends whenever You
-            visit our Service or when You access the Service by or through a
+            visit Our Service or when You access the Service by or through a
             mobile device.
           </p>
           <h4 className="privacy-section-title">
@@ -201,8 +201,8 @@ const ShopSyncPrivacyPolicy = () => {
           <p className="privacy-text">
             We use Cookies and similar tracking technologies to track the
             activity on Our Service and store certain information. Tracking
-            technologies used are beacons, tags, and scripts to collect and
-            track information and to improve and analyze Our Service. The
+            technologies We use include beacons, tags, and scripts to collect
+            and track information and to improve and analyze Our Service. The
             technologies We use may include:
           </p>
           <ul className="privacy-list">
@@ -346,6 +346,17 @@ const ShopSyncPrivacyPolicy = () => {
             </li>
             <li>
               <p className="privacy-text">
+                <strong>For business transfers:</strong> We may use Your
+                information to evaluate or conduct a merger, divestiture,
+                restructuring, reorganization, dissolution, or other sale or
+                transfer of some or all of Our assets, whether as a going
+                concern or as part of bankruptcy, liquidation, or similar
+                proceeding, in which Personal Data held by Us about our Service
+                users is among the assets transferred.
+              </p>
+            </li>
+            <li>
+              <p className="privacy-text">
                 <strong>For other purposes</strong>: We may use Your information
                 for other purposes, such as data analysis, identifying usage
                 trends, determining the effectiveness of our promotional
@@ -358,6 +369,31 @@ const ShopSyncPrivacyPolicy = () => {
             We may share Your personal information in the following situations:
           </p>
           <ul className="privacy-list">
+            <li className="privacy-text">
+              <strong>With Service Providers:</strong> We may share Your
+              personal information with Service Providers to monitor and analyze
+              the use of our Service, to contact You.
+            </li>
+            <li className="privacy-text">
+              <strong>For business transfers:</strong> We may share or transfer
+              Your personal information in connection with, or during
+              negotiations of, any merger, sale of Company assets, financing, or
+              acquisition of all or a portion of Our business to another
+              company.
+            </li>
+            <li className="privacy-text">
+              <strong>With Affiliates:</strong> We may share Your information
+              with Our affiliates, in which case we will require those
+              affiliates to honor this Privacy Policy. Affiliates include Our
+              parent company and any other subsidiaries, joint venture partners
+              or other companies that We control or that are under common
+              control with Us.
+            </li>
+            <li className="privacy-text">
+              <strong>With business partners:</strong> We may share Your
+              information with Our business partners to offer You certain
+              products, services or promotions.
+            </li>
             <li className="privacy-text">
               <strong>With other users:</strong> when You share personal
               information or otherwise interact in the public areas with other
@@ -385,7 +421,7 @@ const ShopSyncPrivacyPolicy = () => {
             purposes. Usage Data is generally retained for a shorter period of
             time, except when this data is used to strengthen the security or to
             improve the functionality of Our Service, or We are legally
-            obligated to retain this data for longer time periods.
+            obligated to retain this data for longer periods.
           </p>
           <h3 className="privacy-section-title">
             Transfer of Your Personal Data
@@ -397,7 +433,7 @@ const ShopSyncPrivacyPolicy = () => {
             information may be transferred to — and maintained on — computers
             located outside of Your state, province, country or other
             governmental jurisdiction where the data protection laws may differ
-            than those from Your jurisdiction.
+            from those from Your jurisdiction.
           </p>
           <p className="privacy-text">
             Your consent to this Privacy Policy followed by Your submission of
@@ -536,4 +572,4 @@ const ShopSyncPrivacyPolicy = () => {
   );
 };
 
-export default ShopSyncPrivacyPolicy;
+export default LastMinutePrivacyPolicy;

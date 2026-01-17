@@ -15,7 +15,7 @@ const NammaKannadaPrivacyPolicy = () => {
       <div className="privacy-container">
         <div className="privacy-card">
           <h1 className="privacy-title">Privacy Policy</h1>
-          <p className="privacy-date">Last updated: November 09, 2025</p>
+          <p className="privacy-date">Last updated: January 17, 2026</p>
           <p className="privacy-text">
             This Privacy Policy describes Our policies and procedures on the
             collection, use and disclosure of Your information when You use the
@@ -461,7 +461,7 @@ const NammaKannadaPrivacyPolicy = () => {
             us:
           </p>
           <ul className="privacy-list">
-            <li>By email: asdev.feedback@gmail.com</li>
+            <li>By email: support@aadish.dev</li>
           </ul>
         </div>
       </div>

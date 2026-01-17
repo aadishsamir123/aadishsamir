@@ -23,6 +23,7 @@ import ShopSyncPrivacyPolicy from "./legal/projects/shopsync/ShopSyncPrivacyPoli
 import ShopSyncDisclaimer from "./legal/projects/shopsync/ShopSyncDisclaimer.jsx";
 import QRAttendancePrivacyPolicy from "./legal/projects/qrattendance/QRAttendancePrivacyPolicy.jsx";
 import NammaKannadaPrivacyPolicy from "./legal/projects/nammakannada/NammaKannadaPrivacyPolicy.jsx";
+import LastMinutePrivacyPolicy from "./legal/projects/lastminute/LastMinutePrivacyPolicy.jsx";
 
 const PageWrapper = ({ children }) => {
   return <>{children}</>;
@@ -646,6 +647,14 @@ const AnimatedRoutes = () => {
           element={
             <PageWrapper>
               <NammaKannadaPrivacyPolicy />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/legal/projects/lastminute/privacypolicy"
+          element={
+            <PageWrapper>
+              <LastMinutePrivacyPolicy />
             </PageWrapper>
           }
         />

@@ -51,7 +51,7 @@ npm run preview
 
 ## 📞 Contact
 
-- **Email**: asdev.feedback@gmail.com
+- **Email**: support@aadish.dev
 - **GitHub**: [aadishsamir123](https://github.com/aadishsamir123)
 - **Website**: [aadish.dev](https://aadish.dev)
 
