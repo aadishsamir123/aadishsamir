@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {
   BrowserRouter,
   Link,
+  Navigate,
   Route,
   Routes,
   useLocation,
@@ -21,7 +22,7 @@ import ShopSync from "./projects/ShopSync.jsx";
 import QTick from "./projects/QTick.jsx";
 import ShopSyncPrivacyPolicy from "./legal/projects/shopsync/ShopSyncPrivacyPolicy.jsx";
 import ShopSyncDisclaimer from "./legal/projects/shopsync/ShopSyncDisclaimer.jsx";
-import QRAttendancePrivacyPolicy from "./legal/projects/qrattendance/QRAttendancePrivacyPolicy.jsx";
+import QTickPrivacyPolicy from "./legal/projects/qtick/QTickPrivacyPolicy.jsx";
 import NammaKannadaPrivacyPolicy from "./legal/projects/nammakannada/NammaKannadaPrivacyPolicy.jsx";
 import LastMinutePrivacyPolicy from "./legal/projects/lastminute/LastMinutePrivacyPolicy.jsx";
 
@@ -637,8 +638,14 @@ const AnimatedRoutes = () => {
         <Route
           path="/legal/projects/qrattendance/privacypolicy"
           element={
+            <Navigate to="/legal/projects/qtick/privacypolicy" replace />
+          }
+        />
+        <Route
+          path="/legal/projects/qtick/privacypolicy"
+          element={
             <PageWrapper>
-              <QRAttendancePrivacyPolicy />
+              <QTickPrivacyPolicy />
             </PageWrapper>
           }
         />

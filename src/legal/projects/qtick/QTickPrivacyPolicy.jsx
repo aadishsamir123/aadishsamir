@@ -2,19 +2,19 @@ import "react";
 import "../../LegalTexts.css";
 import SEOHead from "../../../components/SEOHead";
 
-const QRAttendancePrivacyPolicy = () => {
+const QTickPrivacyPolicy = () => {
   return (
     <>
       <SEOHead
-        title="QR Attendance Privacy Policy"
-        description="Privacy Policy for QR Attendance app"
-        keywords="QR Attendance Privacy Policy, Data Protection, App Privacy"
-        url="https://aadish.dev/legal/projects/qrattendance/privacypolicy"
+        title="QTick Privacy Policy"
+        description="Privacy Policy for QTick app"
+        keywords="QTick Privacy Policy, Data Protection, App Privacy"
+        url="https://aadish.dev/legal/projects/qtick/privacypolicy"
         noIndex={true}
       />
       <div className="privacy-container">
         <div className="privacy-card">
-          <h1 className="privacy-title">QR Attendance Privacy Policy</h1>
+          <h1 className="privacy-title">QTick Privacy Policy</h1>
           <p className="privacy-date">Last updated: January 17, 2026</p>
           <p className="privacy-text">
             This Privacy Policy describes Our policies and procedures on the
@@ -69,14 +69,14 @@ const QRAttendancePrivacyPolicy = () => {
             </li>
             <li>
               <p className="privacy-text">
-                <strong>Application</strong> refers to QR Attendance, the
+                <strong>Application</strong> refers to QTick, the
                 software program provided by the Company.
               </p>
             </li>
             <li>
               <p className="privacy-text">
                 <strong>Company</strong> (referred to as either "the Company",
-                "We", "Us" or "Our" in this Agreement) refers to QR Attendance.
+                "We", "Us" or "Our" in this Agreement) refers to QTick.
               </p>
             </li>
             <li>
@@ -192,4 +192,4 @@ const QRAttendancePrivacyPolicy = () => {
   );
 };
 
-export default QRAttendancePrivacyPolicy;
+export default QTickPrivacyPolicy;
