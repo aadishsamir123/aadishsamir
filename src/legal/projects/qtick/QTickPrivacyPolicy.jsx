@@ -15,7 +15,7 @@ const QTickPrivacyPolicy = () => {
       <div className="privacy-container">
         <div className="privacy-card">
           <h1 className="privacy-title">QTick Privacy Policy</h1>
-          <p className="privacy-date">Last updated: January 17, 2026</p>
+          <p className="privacy-date">Last updated: January 31, 2026</p>
           <p className="privacy-text">
             This Privacy Policy describes Our policies and procedures on the
             collection, use and disclosure of Your information when You use the
