@@ -114,9 +114,10 @@ body {
   background: linear-gradient(
     180deg,
     var(--scene-sky-top) 0%,
-    var(--scene-sky-mid) 48%,
-    var(--scene-haze) 68%,
-    var(--scene-floor-base) 100%
+    color-mix(in srgb, var(--scene-sky-mid) 84%, var(--scene-sky-top)) 36%,
+    var(--scene-sky-mid) 58%,
+    color-mix(in srgb, var(--scene-floor-top) 38%, var(--scene-sky-mid)) 76%,
+    color-mix(in srgb, var(--scene-floor-base) 82%, var(--scene-floor-top)) 100%
   );
 }
 
@@ -124,7 +125,6 @@ body {
 .scenic-background__mist,
 .scenic-background__mountain,
 .scenic-background__floor,
-.scenic-background__floor-highlight,
 .scenic-background__grain {
   position: absolute;
 }
@@ -277,18 +277,6 @@ body {
   );
 }
 
-.scenic-background__floor-highlight {
-  inset-inline: 0;
-  bottom: 21vh;
-  height: 16vh;
-  background: radial-gradient(
-    circle at 50% 10%,
-    rgba(255, 255, 255, 0.14) 0%,
-    transparent 60%
-  );
-  opacity: 0.8;
-}
-
 .scenic-background__grain {
   inset: 0;
   background-image:
@@ -311,7 +299,7 @@ body {
     24px 24px,
     30px 30px,
     36px 36px;
-  opacity: 0.35;
+  opacity: 0.46;
 }
 
 .glass-panel,
@@ -383,7 +371,7 @@ body {
   }
 
   .scenic-background__grain {
-    opacity: 0.2;
+    opacity: 0.3;
   }
 }
 

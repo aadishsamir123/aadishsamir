@@ -7,7 +7,6 @@ const ScenicBackground = () => {
       <div className="scenic-background__mountain scenic-background__mountain--mid" />
       <div className="scenic-background__mountain scenic-background__mountain--near" />
       <div className="scenic-background__floor" />
-      <div className="scenic-background__floor-highlight" />
       <div className="scenic-background__grain" />
     </div>
   );
