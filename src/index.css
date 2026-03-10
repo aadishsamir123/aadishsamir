@@ -256,11 +256,7 @@ body {
     180deg,
     rgba(255, 255, 255, 0.08) 0%,
     var(--scene-mountain-near) 68%,
-    color-mix(
-        in srgb,
-        var(--scene-mountain-near) 72%,
-        var(--scene-floor-base)
-      )
+    color-mix(in srgb, var(--scene-mountain-near) 72%, var(--scene-floor-base))
       100%
   );
 }
@@ -270,7 +266,11 @@ body {
   bottom: -3vh;
   height: 30vh;
   background:
-    linear-gradient(180deg, var(--scene-floor-top) 0%, var(--scene-floor-base) 100%),
+    linear-gradient(
+      180deg,
+      var(--scene-floor-top) 0%,
+      var(--scene-floor-base) 100%
+    ),
     repeating-linear-gradient(
       115deg,
       transparent 0 26px,
@@ -306,10 +306,25 @@ body {
 .scenic-background__grain {
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px),
-    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px),
-    radial-gradient(circle at 45% 70%, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px);
-  background-size: 24px 24px, 30px 30px, 36px 36px;
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.08) 0 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(255, 255, 255, 0.06) 0 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 45% 70%,
+      rgba(255, 255, 255, 0.05) 0 1px,
+      transparent 1px
+    );
+  background-size:
+    24px 24px,
+    30px 30px,
+    36px 36px;
   opacity: 0.35;
 }
 
@@ -324,7 +339,9 @@ body {
   background: var(--glass-bg-strong);
 }
 
-@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+@supports (
+  (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))
+) {
   .glass-panel,
   .glass-button {
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
@@ -386,7 +403,10 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .glass-button {
-    transition: border-color 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
+    transition:
+      border-color 0.25s ease,
+      background-color 0.25s ease,
+      opacity 0.25s ease;
   }
 
   .glass-button:hover {
