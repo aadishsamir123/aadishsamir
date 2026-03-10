@@ -52,7 +52,6 @@ const WeatherFast = () => {
       <div
         className="min-h-screen p-8 pt-24"
         style={{
-          backgroundColor: "var(--bg-primary)",
           color: "var(--text-primary)",
         }}
       >
@@ -60,7 +59,7 @@ const WeatherFast = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => navigate("/projects")}
-          className="mb-8 flex items-center gap-2 rounded-full border border-gray-600 px-4 py-2 transition-colors hover:border-blue-500 hover:bg-blue-500/20"
+          className="glass-button mb-8 flex items-center gap-2 rounded-full border border-gray-600 px-4 py-2 transition-colors hover:border-blue-500 hover:bg-blue-500/20"
           style={{ color: "var(--text-muted)" }}
         >
           <FaArrowLeft /> Back to Projects
@@ -68,8 +67,7 @@ const WeatherFast = () => {
 
         <motion.div
           layoutId="card-container-weatherfast"
-          className="mb-12 flex flex-col items-start gap-8 rounded-3xl border border-gray-700 p-6 shadow-lg md:flex-row"
-          style={{ backgroundColor: "var(--bg-secondary)" }}
+          className="glass-panel glass-panel--strong mb-12 flex flex-col items-start gap-8 rounded-3xl border border-gray-700 p-6 shadow-lg md:flex-row"
         >
           <motion.img
             layoutId="card-image-weatherfast"
@@ -91,7 +89,7 @@ const WeatherFast = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex h-10 items-center gap-2 rounded-full border border-blue-500 px-4 text-sm transition-all hover:bg-blue-500/20 sm:text-base"
+              className="glass-button flex h-10 items-center gap-2 rounded-full border border-blue-500 px-4 text-sm transition-all hover:bg-blue-500/20 sm:text-base"
               style={{ color: "var(--color-blue)" }}
               onClick={() =>
                 window.open("https://weatherfast.aadish.dev", "_blank")
@@ -174,7 +172,7 @@ const WeatherFast = () => {
                   duration: 0.5,
                 }}
                 className="flex items-center justify-start rounded-2xl border border-gray-700 p-2 shadow-md transition-all hover:border-blue-500"
-                style={{ backgroundColor: "var(--bg-secondary)" }}
+                style={{ backgroundColor: "var(--glass-bg)" }}
               >
                 <img
                   src={screenshot}

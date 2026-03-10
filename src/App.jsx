@@ -16,6 +16,7 @@ import SEOHead from "./components/SEOHead";
 import NotFound from "./components/NotFound";
 import LoadingScreen from "./components/LoadingScreen";
 import ThemeToggle from "./components/ThemeToggle";
+import ScenicBackground from "./components/ScenicBackground";
 import PropTypes from "prop-types";
 import WeatherFast from "./projects/WeatherFast.jsx";
 import ShopSync from "./projects/ShopSync.jsx";
@@ -75,72 +76,63 @@ const Home = () => {
         structuredData={homeStructuredData}
       />
       <main className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-        <header>
-          <motion.h1
-            className="mb-4 text-5xl font-extrabold tracking-tight md:text-6xl"
-            style={{ color: "var(--color-blue)" }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Welcome to My Website
-          </motion.h1>
-          <motion.p
-            className="mb-6 max-w-2xl text-xl leading-relaxed"
-            style={{ color: "var(--text-muted)" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            I&apos;m a student who codes as a hobby, building apps with modern
-            tech.
-          </motion.p>
-        </header>
-        <nav aria-label="Main navigation links">
-          <motion.div
-            className="grid w-full max-w-md gap-4 sm:grid-cols-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <Link
-              to="/projects"
-              className="flex items-center justify-center gap-2 rounded-full border px-6 py-3 font-semibold transition-all hover:opacity-80"
-              style={{
-                borderColor: "var(--color-blue)",
-                color: "var(--color-blue)",
-                backgroundColor: "transparent",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "rgba(88, 166, 255, 0.1)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = "transparent")
-              }
+        <motion.div
+          className="glass-panel glass-panel--strong w-full max-w-4xl rounded-[2rem] px-6 py-10 shadow-xl sm:px-10"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <header>
+            <motion.h1
+              className="mb-4 text-5xl font-extrabold tracking-tight md:text-6xl"
+              style={{ color: "var(--color-blue)" }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <FaGlobe /> <span>View Projects</span>
-            </Link>
-            <Link
-              to="/about"
-              className="flex items-center justify-center gap-2 rounded-full border px-6 py-3 font-semibold transition-all hover:opacity-80"
-              style={{
-                borderColor: "var(--color-green)",
-                color: "var(--color-green)",
-                backgroundColor: "transparent",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "rgba(58, 185, 80, 0.1)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = "transparent")
-              }
+              Welcome to My Website
+            </motion.h1>
+            <motion.p
+              className="mx-auto mb-6 max-w-2xl text-xl leading-relaxed"
+              style={{ color: "var(--text-muted)" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
             >
-              <FaInfoCircle /> <span>About Me</span>
-            </Link>
-          </motion.div>
-        </nav>
+              I&apos;m a student who codes as a hobby, building apps with modern
+              tech.
+            </motion.p>
+          </header>
+          <nav aria-label="Main navigation links">
+            <motion.div
+              className="grid w-full max-w-md gap-4 sm:mx-auto sm:grid-cols-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Link
+                to="/projects"
+                className="glass-button flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold hover:opacity-80"
+                style={{
+                  borderColor: "color-mix(in srgb, var(--color-blue) 52%, var(--glass-border))",
+                  color: "var(--color-blue)",
+                }}
+              >
+                <FaGlobe /> <span>View Projects</span>
+              </Link>
+              <Link
+                to="/about"
+                className="glass-button flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold hover:opacity-80"
+                style={{
+                  borderColor: "color-mix(in srgb, var(--color-green) 48%, var(--glass-border))",
+                  color: "var(--color-green)",
+                }}
+              >
+                <FaInfoCircle /> <span>About Me</span>
+              </Link>
+            </motion.div>
+          </nav>
+        </motion.div>
       </main>
     </>
   );
@@ -159,10 +151,9 @@ const ProjectCard = ({ title, description, icon, links }) => {
       >
         <motion.div
           layoutId={`card-container-${links.project_page.url}`}
-          className="flex flex-col items-center space-y-4 rounded-3xl border p-4 shadow-lg transition-colors sm:flex-row sm:space-x-4 sm:space-y-0 sm:p-6"
+          className="glass-panel flex flex-col items-center space-y-4 rounded-3xl border p-4 shadow-lg transition-colors sm:flex-row sm:space-x-4 sm:space-y-0 sm:p-6"
           style={{
             borderColor: "var(--border-color)",
-            backgroundColor: "var(--bg-secondary)",
           }}
         >
           <motion.img
@@ -196,7 +187,7 @@ const ProjectCard = ({ title, description, icon, links }) => {
               {links.web && (links.web.url || links.web.comingSoon) && (
                 <button
                   type="button"
-                  className="flex h-10 items-center gap-2 rounded-full border px-4 text-sm transition-all sm:text-base"
+                  className="glass-button flex h-10 items-center gap-2 rounded-full border px-4 text-sm sm:text-base"
                   style={{
                     borderColor: links.web.comingSoon
                       ? "var(--border-color)"
@@ -211,15 +202,6 @@ const ProjectCard = ({ title, description, icon, links }) => {
                   onClick={() =>
                     links.web.url && window.open(links.web.url, "_blank")
                   }
-                  onMouseEnter={(e) => {
-                    if (!links.web.comingSoon) {
-                      e.currentTarget.style.backgroundColor =
-                        "rgba(88, 166, 255, 0.1)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
                 >
                   <FaGlobe className="flex-shrink-0" />
                   <span className="whitespace-nowrap">
@@ -234,7 +216,7 @@ const ProjectCard = ({ title, description, icon, links }) => {
                 (links.playStore.url || links.playStore.comingSoon) && (
                   <button
                     type="button"
-                    className="text-sm transition-all sm:text-base"
+                    className="glass-button text-sm sm:text-base"
                     style={{
                       height: links.playStore.comingSoon ? "40px" : "40px",
                       borderWidth: links.playStore.comingSoon ? "2px" : "0",
@@ -287,7 +269,7 @@ const ProjectCard = ({ title, description, icon, links }) => {
                 (links.github.url || links.github.comingSoon) && (
                   <button
                     type="button"
-                    className="flex h-10 items-center gap-2 rounded-full border px-4 text-sm transition-all sm:text-base"
+                    className="glass-button flex h-10 items-center gap-2 rounded-full border px-4 text-sm sm:text-base"
                     style={{
                       borderColor: links.github.comingSoon
                         ? "var(--border-color)"
@@ -305,15 +287,6 @@ const ProjectCard = ({ title, description, icon, links }) => {
                       links.github.url &&
                       window.open(links.github.url, "_blank")
                     }
-                      onMouseEnter={(e) => {
-                        if (!links.github.comingSoon) {
-                          e.currentTarget.style.backgroundColor =
-                            "rgba(128, 128, 128, 0.1)";
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = "transparent";
-                      }}
                   >
                     <FaGithub className="flex-shrink-0" />
                     <span className="whitespace-nowrap">
@@ -394,47 +367,49 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1
-          className="mb-4 text-5xl font-extrabold tracking-tight md:text-6xl"
-          style={{ color: "var(--color-blue)" }}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          About Me
-        </motion.h1>
-        <motion.p
-          className="mb-6 max-w-2xl text-xl leading-relaxed"
-          style={{ color: "var(--text-muted)" }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          Hi! I&apos;m Aadish, a student who loves coding as a hobby and
-          building cool apps.
-          <br />
-          <br />I enjoy working with React, Flutter, and Firebase to create fun
-          projects and learn new things along the way.
-        </motion.p>
-        <motion.div
-          className="w-full max-w-md"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          <a
-            href="https://github.com/aadishsamir123"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-full border px-6 py-3 font-semibold transition-all hover:opacity-80"
-            style={{
-              borderColor: "var(--border-color)",
-              color: "var(--text-secondary)",
-            }}
+        <div className="glass-panel glass-panel--strong w-full max-w-3xl rounded-[2rem] px-6 py-10 shadow-xl sm:px-10">
+          <motion.h1
+            className="mb-4 text-5xl font-extrabold tracking-tight md:text-6xl"
+            style={{ color: "var(--color-blue)" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <FaGithub /> View GitHub Profile
-          </a>
-        </motion.div>
+            About Me
+          </motion.h1>
+          <motion.p
+            className="mx-auto mb-6 max-w-2xl text-xl leading-relaxed"
+            style={{ color: "var(--text-muted)" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            Hi! I&apos;m Aadish, a student who loves coding as a hobby and
+            building cool apps.
+            <br />
+            <br />I enjoy working with React, Flutter, and Firebase to create
+            fun projects and learn new things along the way.
+          </motion.p>
+          <motion.div
+            className="w-full max-w-md sm:mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <a
+              href="https://github.com/aadishsamir123"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-button flex items-center justify-center gap-2 rounded-full border px-6 py-3 font-semibold hover:opacity-80"
+              style={{
+                borderColor: "var(--border-color)",
+                color: "var(--text-secondary)",
+              }}
+            >
+              <FaGithub /> View GitHub Profile
+            </a>
+          </motion.div>
+        </div>
       </motion.div>
     </>
   );
@@ -507,12 +482,14 @@ const Projects = () => {
         style={{ color: "var(--text-primary)" }}
       >
         <header>
-          <h1
-            className="text-4xl font-bold mb-6"
-            style={{ color: "var(--color-blue)" }}
-          >
-            My Projects
-          </h1>
+          <div className="glass-panel glass-panel--strong mb-6 rounded-[1.75rem] px-6 py-5 shadow-lg">
+            <h1
+              className="text-4xl font-bold"
+              style={{ color: "var(--color-blue)" }}
+            >
+              My Projects
+            </h1>
+          </div>
         </header>
         <main>
           <section className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -697,8 +674,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="relative">
+      <div className="app-shell">
+        <ScenicBackground />
         <motion.div
+          className="app-content"
           initial={false}
           animate={{
             opacity: loading ? 0 : 1,
@@ -717,7 +696,6 @@ function App() {
           <div
             className="min-h-screen"
             style={{
-              backgroundColor: "var(--bg-primary)",
               color: "var(--text-primary)",
             }}
           >

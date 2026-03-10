@@ -8,9 +8,8 @@ const ThemeToggle = () => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="fixed bottom-6 right-6 z-40 rounded-full border p-3 shadow-lg transition-all"
+      className="glass-button fixed bottom-6 right-6 z-40 rounded-full border p-3 shadow-lg"
       style={{
-        backgroundColor: "var(--bg-secondary)",
         borderColor: "var(--border-color)",
         color: "var(--color-blue)",
       }}

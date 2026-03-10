@@ -5,23 +5,32 @@
 }
 
 .privacy-card {
-  background-color: white;
-  border-radius: 16px;
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
   padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--glass-shadow);
+  color: var(--text-primary);
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .privacy-card {
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+    backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  }
 }
 
 .privacy-title {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--color-blue);
 }
 
 .privacy-date {
   margin-top: 1rem;
   margin-bottom: 2rem;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .privacy-section-title {
@@ -29,25 +38,29 @@
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .privacy-text {
   line-height: 1.6;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-secondary);
 }
 
 .privacy-list {
   padding-left: 2rem;
   margin-bottom: 1.5rem;
-  color: #000000;
-  list-style-type: disc; /* Add explicit bullet style */
+  color: var(--text-primary);
+  list-style-type: disc;
 }
 
 .privacy-list li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
-  color: #000000;
-  display: list-item; /* Ensure list items display as list items */
+  color: var(--text-primary);
+  display: list-item;
+}
+
+.privacy-card a {
+  color: var(--color-blue);
 }

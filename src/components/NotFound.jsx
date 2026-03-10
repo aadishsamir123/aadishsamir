@@ -18,7 +18,7 @@ const NotFound = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-md mx-auto"
+          className="glass-panel glass-panel--strong mx-auto max-w-md rounded-[2rem] px-8 py-10 shadow-xl"
         >
           <motion.h1
             className="text-8xl font-bold mb-4"
@@ -59,14 +59,14 @@ const NotFound = () => {
           >
             <Link
               to="/"
-              className="flex items-center justify-center gap-2 rounded-full border border-blue-500 px-6 py-3 text-blue-400 transition-colors hover:bg-blue-500/20"
+              className="glass-button flex items-center justify-center gap-2 rounded-full border border-blue-500 px-6 py-3 text-blue-400 transition-colors hover:bg-blue-500/20"
             >
               <FaHome /> Go Home
             </Link>
 
             <Link
               to="/projects"
-              className="flex items-center justify-center gap-2 rounded-full border border-green-500 px-6 py-3 text-green-400 transition-colors hover:bg-green-500/20"
+              className="glass-button flex items-center justify-center gap-2 rounded-full border border-green-500 px-6 py-3 text-green-400 transition-colors hover:bg-green-500/20"
             >
               View Projects <FaArrowRight />
             </Link>

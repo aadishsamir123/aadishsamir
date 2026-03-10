@@ -11,9 +11,8 @@ const Navbar = () => {
   return (
     <header>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors"
+        className="glass-panel glass-panel--strong fixed top-0 left-0 right-0 z-50 border-b transition-colors"
         style={{
-          backgroundColor: "color-mix(in srgb, var(--bg-primary) 88%, transparent)",
           borderColor: "var(--border-color)",
         }}
         aria-label="Main navigation"
@@ -144,8 +143,7 @@ const Navbar = () => {
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", damping: 20, stiffness: 100 }}
-                className="fixed top-0 right-0 w-full h-screen z-50 flex flex-col"
-                style={{ backgroundColor: "var(--bg-primary)" }}
+                className="glass-panel glass-panel--strong fixed top-0 right-0 z-50 flex h-screen w-full flex-col"
               >
                 <div className="flex flex-col items-center justify-center h-full space-y-12 py-20">
                   <motion.div
