@@ -690,33 +690,48 @@ function App() {
     // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 300);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <LoadingScreen />;
-  }
-
   return (
     <BrowserRouter>
-      <ChristmasEffects
-        snowflakeCount={50}
-        showText={false}
-      />
-      <div
-        className="min-h-screen"
-        style={{
-          backgroundColor: "var(--bg-primary)",
-          color: "var(--text-primary)",
-        }}
-      >
-        <Navbar />
-        <ThemeToggle />
-        <main>
-          <AnimatedRoutes />
-        </main>
+      <div className="relative">
+        <motion.div
+          initial={false}
+          animate={{
+            opacity: loading ? 0 : 1,
+            scale: loading ? 0.985 : 1,
+          }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          style={{
+            pointerEvents: loading ? "none" : "auto",
+          }}
+          aria-hidden={loading}
+        >
+          <ChristmasEffects
+            snowflakeCount={50}
+            showText={false}
+          />
+          <div
+            className="min-h-screen"
+            style={{
+              backgroundColor: "var(--bg-primary)",
+              color: "var(--text-primary)",
+            }}
+          >
+            <Navbar />
+            <ThemeToggle />
+            <main>
+              <AnimatedRoutes />
+            </main>
+          </div>
+        </motion.div>
+
+        <AnimatePresence>
+          {loading ? <LoadingScreen key="loading-screen" /> : null}
+        </AnimatePresence>
       </div>
     </BrowserRouter>
   );
