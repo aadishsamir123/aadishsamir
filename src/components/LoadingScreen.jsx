@@ -30,10 +30,6 @@ const LoadingScreen = () => {
             Loading{spinnerFrames[spinnerIndex]}
           </div>
 
-          <p className="text-lg" style={{ color: "var(--text-muted)" }}>
-            Preparing the site for you.
-          </p>
-
           <div className="mt-8 flex flex-col items-center gap-3">
             <motion.div
               className="h-2 w-52 overflow-hidden rounded-full"
@@ -50,9 +46,6 @@ const LoadingScreen = () => {
                 }}
               />
             </motion.div>
-            <p className="text-sm text-[var(--text-muted)]">
-              One moment while everything loads.
-            </p>
           </div>
         </div>
       </motion.div>
