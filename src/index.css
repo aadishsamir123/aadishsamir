@@ -164,20 +164,6 @@ body {
   );
 }
 
-.scenic-background__mist--mid {
-  top: 44vh;
-  left: -5%;
-  width: 110%;
-  height: 16vh;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 28%,
-    rgba(255, 255, 255, 0.2) 50%,
-    transparent 100%
-  );
-}
-
 .scenic-background__mountain {
   inset-inline: -6%;
   bottom: 26vh;
