@@ -56,7 +56,7 @@ const ShopSync = () => {
         structuredData={shopsyncStructuredData}
       />
       <div
-        className="min-h-screen p-8 pt-24 font-mono"
+        className="min-h-screen p-8 pt-24"
         style={{
           backgroundColor: "var(--bg-primary)",
           color: "var(--text-primary)",
@@ -66,15 +66,15 @@ const ShopSync = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => navigate("/projects")}
-          className="flex items-center gap-2 mb-8 transition-colors border-2 border-gray-600 hover:border-blue-500 hover:bg-blue-500/20 px-4 py-2"
+          className="mb-8 flex items-center gap-2 rounded-full border border-gray-600 px-4 py-2 transition-colors hover:border-blue-500 hover:bg-blue-500/20"
           style={{ color: "var(--text-muted)" }}
         >
-          <FaArrowLeft /> [Back to Projects]
+          <FaArrowLeft /> Back to Projects
         </motion.button>
 
         <motion.div
           layoutId="card-container-shopsync"
-          className="flex flex-col md:flex-row items-start gap-8 mb-12 border-2 border-gray-700 p-6 shadow-lg"
+          className="mb-12 flex flex-col items-start gap-8 rounded-3xl border border-gray-700 p-6 shadow-lg md:flex-row"
           style={{ backgroundColor: "var(--bg-secondary)" }}
         >
           <motion.img
@@ -90,21 +90,21 @@ const ShopSync = () => {
               className="text-4xl font-bold mb-4"
               style={{ color: "var(--color-blue)" }}
             >
-              <span className="text-gray-500">$</span> ShopSync
+              ShopSync
             </motion.h1>
 
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="h-10 flex items-center gap-2 px-4 border-2 border-blue-500 hover:bg-blue-500/20 transition-all text-sm sm:text-base"
+              className="flex h-10 items-center gap-2 rounded-full border border-blue-500 px-4 text-sm transition-all hover:bg-blue-500/20 sm:text-base"
               style={{ color: "var(--color-blue)" }}
               onClick={() =>
                 window.open("https://shopsync.aadish.dev", "_blank")
               }
             >
               <FaGlobe className="flex-shrink-0" />
-              <span className="whitespace-nowrap">[View Website]</span>
+              <span className="whitespace-nowrap">View Website</span>
             </motion.button>
 
             <br />
@@ -134,8 +134,7 @@ const ShopSync = () => {
                   className="text-xl font-semibold"
                   style={{ color: "var(--color-blue)" }}
                 >
-                  <span className="text-green-400">//</span> ShopSync - Share
-                  shopping lists with family and friends
+                  ShopSync helps families and friends stay aligned on shopping.
                 </p>
 
                 <p>
@@ -240,14 +239,14 @@ const ShopSync = () => {
               </div>
 
               <div
-                className="border-2 border-green-500 p-4"
+                className="rounded-2xl border border-green-500 p-4"
                 style={{ backgroundColor: "var(--bg-secondary)" }}
               >
                 <h3
                   className="text-lg font-semibold mb-2"
                   style={{ color: "var(--color-green)" }}
                 >
-                  <span className="text-green-400">&gt;</span> Perfect For:
+                  Perfect For
                 </h3>
                 <p style={{ color: "var(--text-muted)" }}>
                   Families managing household shopping, roommates coordinating
@@ -263,7 +262,7 @@ const ShopSync = () => {
           className="text-2xl font-bold mb-6"
           style={{ color: "var(--color-blue)" }}
         >
-          <span className="text-gray-500">$</span> Screenshots
+          Screenshots
         </h2>
         <motion.div
           initial={{ opacity: 0 }}
@@ -273,7 +272,7 @@ const ShopSync = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-fit">
             {screenshots.map((screenshot, index) => (
               <motion.div
-                key={index}
+                key={screenshot}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
@@ -283,7 +282,7 @@ const ShopSync = () => {
                   delay: 0.5,
                   duration: 0.5,
                 }}
-                className="flex items-center justify-start border-2 border-gray-700 hover:border-blue-500 p-2 shadow-md transition-all"
+                className="flex items-center justify-start rounded-2xl border border-gray-700 p-2 shadow-md transition-all hover:border-blue-500"
                 style={{ backgroundColor: "var(--bg-secondary)" }}
               >
                 <img

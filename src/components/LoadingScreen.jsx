@@ -1,18 +1,18 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LoadingScreen = () => {
   const [spinnerIndex, setSpinnerIndex] = useState(0);
-  const spinnerFrames = ["/", "|", "\\", "-"];
+  const spinnerFrames = [".", "..", "..."];
+  const spinnerFrameCount = spinnerFrames.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSpinnerIndex((prev) => (prev + 1) % spinnerFrames.length);
-    }, 100);
+      setSpinnerIndex((prev) => (prev + 1) % spinnerFrameCount);
+    }, 250);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [spinnerFrameCount]);
 
   return (
     <AnimatePresence>
@@ -20,32 +20,23 @@ const LoadingScreen = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex flex-col items-center justify-center font-mono bg-[var(--bg-primary)] text-[var(--text-primary)]"
+        className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[var(--bg-primary)] px-6 text-[var(--text-primary)]"
       >
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-5">
           <div
-            className="text-6xl font-bold"
+            className="text-5xl font-extrabold tracking-tight sm:text-6xl"
             style={{ color: "var(--color-blue)" }}
           >
-            <span className="text-[var(--text-muted)]">$</span> Loading
+            Loading{spinnerFrames[spinnerIndex]}
           </div>
 
-          <div className="flex items-center justify-center gap-2 text-2xl">
-            <span className="text-green-400">&gt;</span>
-            <span className="text-[var(--text-muted)]">Please wait</span>
-            <motion.span
-              key={spinnerIndex}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-[var(--color-blue)] font-bold"
-            >
-              {spinnerFrames[spinnerIndex]}
-            </motion.span>
-          </div>
+          <p className="text-lg" style={{ color: "var(--text-muted)" }}>
+            Preparing the site for you.
+          </p>
 
-          <div className="mt-8 flex flex-col items-center gap-2">
+          <div className="mt-8 flex flex-col items-center gap-3">
             <motion.div
-              className="h-1 w-48 border border-[var(--border-color)]"
+              className="h-2 w-52 overflow-hidden rounded-full"
               style={{ backgroundColor: "var(--bg-secondary)" }}
             >
               <motion.div
@@ -60,8 +51,7 @@ const LoadingScreen = () => {
               />
             </motion.div>
             <p className="text-sm text-[var(--text-muted)]">
-              <span className="text-green-400">//</span> Initializing
-              website...
+              One moment while everything loads.
             </p>
           </div>
         </div>

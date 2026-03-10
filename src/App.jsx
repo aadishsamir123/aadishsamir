@@ -77,36 +77,35 @@ const Home = () => {
       <main className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
         <header>
           <motion.h1
-            className="text-5xl md:text-6xl font-bold mb-4 font-mono tracking-tight"
+            className="mb-4 text-5xl font-extrabold tracking-tight md:text-6xl"
             style={{ color: "var(--color-blue)" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span style={{ color: "var(--text-muted)" }}>$</span> Welcome to My
-            Website
+            Welcome to My Website
           </motion.h1>
           <motion.p
-            className="text-xl font-mono mb-6"
+            className="mb-6 max-w-2xl text-xl leading-relaxed"
             style={{ color: "var(--text-muted)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-green-400">&gt;</span> I&apos;m a student who
-            codes as a hobby, building apps with modern tech.
+            I&apos;m a student who codes as a hobby, building apps with modern
+            tech.
           </motion.p>
         </header>
         <nav aria-label="Main navigation links">
           <motion.div
-            className="grid gap-4 sm:grid-cols-2 w-full max-w-md font-mono"
+            className="grid w-full max-w-md gap-4 sm:grid-cols-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
             <Link
               to="/projects"
-              className="border-2 py-3 px-6 transition-all flex items-center gap-2 justify-center hover:opacity-80"
+              className="flex items-center justify-center gap-2 rounded-full border px-6 py-3 font-semibold transition-all hover:opacity-80"
               style={{
                 borderColor: "var(--color-blue)",
                 color: "var(--color-blue)",
@@ -120,11 +119,11 @@ const Home = () => {
                 (e.currentTarget.style.backgroundColor = "transparent")
               }
             >
-              <FaGlobe /> <span className="font-mono">[View Projects]</span>
+              <FaGlobe /> <span>View Projects</span>
             </Link>
             <Link
               to="/about"
-              className="border-2 py-3 px-6 transition-all flex items-center gap-2 justify-center hover:opacity-80"
+              className="flex items-center justify-center gap-2 rounded-full border px-6 py-3 font-semibold transition-all hover:opacity-80"
               style={{
                 borderColor: "var(--color-green)",
                 color: "var(--color-green)",
@@ -138,7 +137,7 @@ const Home = () => {
                 (e.currentTarget.style.backgroundColor = "transparent")
               }
             >
-              <FaInfoCircle /> <span className="font-mono">[About Me]</span>
+              <FaInfoCircle /> <span>About Me</span>
             </Link>
           </motion.div>
         </nav>
@@ -160,7 +159,7 @@ const ProjectCard = ({ title, description, icon, links }) => {
       >
         <motion.div
           layoutId={`card-container-${links.project_page.url}`}
-          className="border-2 p-4 sm:p-6 shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 transition-colors"
+          className="flex flex-col items-center space-y-4 rounded-3xl border p-4 shadow-lg transition-colors sm:flex-row sm:space-x-4 sm:space-y-0 sm:p-6"
           style={{
             borderColor: "var(--border-color)",
             backgroundColor: "var(--bg-secondary)",
@@ -178,17 +177,17 @@ const ProjectCard = ({ title, description, icon, links }) => {
           <div className="flex-1 text-center sm:text-left w-full overflow-hidden">
             <motion.h2
               layoutId={`card-title-${links.project_page.url}`}
-              className="text-2xl font-bold font-mono break-words"
+              className="text-2xl font-bold break-words"
               style={{ color: "var(--color-blue)" }}
             >
               {title}
             </motion.h2>
             <motion.p
               layoutId={`card-description-${links.project_page.url}`}
-              className="font-mono mt-2 break-words"
+              className="mt-2 break-words leading-relaxed"
               style={{ color: "var(--text-muted)" }}
             >
-              <span className="text-green-400">//</span> {description}
+              {description}
             </motion.p>
             <motion.div
               className="mt-4 flex flex-wrap items-center justify-center sm:justify-start gap-2"
@@ -196,7 +195,8 @@ const ProjectCard = ({ title, description, icon, links }) => {
             >
               {links.web && (links.web.url || links.web.comingSoon) && (
                 <button
-                  className="h-10 flex items-center gap-2 px-3 border-2 font-mono transition-all text-sm sm:text-base"
+                  type="button"
+                  className="flex h-10 items-center gap-2 rounded-full border px-4 text-sm transition-all sm:text-base"
                   style={{
                     borderColor: links.web.comingSoon
                       ? "var(--border-color)"
@@ -211,20 +211,21 @@ const ProjectCard = ({ title, description, icon, links }) => {
                   onClick={() =>
                     links.web.url && window.open(links.web.url, "_blank")
                   }
-                  onMouseEnter={(e) =>
-                    !links.web.comingSoon &&
-                    (e.currentTarget.style.backgroundColor =
-                      "rgba(88, 166, 255, 0.1)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.backgroundColor = "transparent")
-                  }
+                  onMouseEnter={(e) => {
+                    if (!links.web.comingSoon) {
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(88, 166, 255, 0.1)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }}
                 >
                   <FaGlobe className="flex-shrink-0" />
                   <span className="whitespace-nowrap">
                     {links.web.comingSoon
-                      ? "[Web Coming Soon]"
-                      : "[View Website]"}
+                      ? "Website coming soon"
+                      : "View website"}
                   </span>
                 </button>
               )}
@@ -232,10 +233,12 @@ const ProjectCard = ({ title, description, icon, links }) => {
               {links.playStore &&
                 (links.playStore.url || links.playStore.comingSoon) && (
                   <button
-                    className="transition-all text-sm sm:text-base font-mono"
+                    type="button"
+                    className="text-sm transition-all sm:text-base"
                     style={{
                       height: links.playStore.comingSoon ? "40px" : "40px",
                       borderWidth: links.playStore.comingSoon ? "2px" : "0",
+                      borderRadius: links.playStore.comingSoon ? "999px" : "0",
                       borderColor: links.playStore.comingSoon
                         ? "var(--border-color)"
                         : "transparent",
@@ -252,20 +255,22 @@ const ProjectCard = ({ title, description, icon, links }) => {
                       links.playStore.url &&
                       window.open(links.playStore.url, "_blank")
                     }
-                    onMouseEnter={(e) =>
-                      !links.playStore.comingSoon &&
-                      (e.currentTarget.style.opacity = "0.8")
-                    }
-                    onMouseLeave={(e) =>
-                      !links.playStore.comingSoon &&
-                      (e.currentTarget.style.opacity = "1")
-                    }
+                    onMouseEnter={(e) => {
+                      if (!links.playStore.comingSoon) {
+                        e.currentTarget.style.opacity = "0.8";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!links.playStore.comingSoon) {
+                        e.currentTarget.style.opacity = "1";
+                      }
+                    }}
                   >
                     {links.playStore.comingSoon ? (
                       <div className="flex items-center gap-2 px-3">
                         <FaGooglePlay className="flex-shrink-0" />
                         <span className="whitespace-nowrap">
-                          [Android coming soon]
+                          Android coming soon
                         </span>
                       </div>
                     ) : (
@@ -281,7 +286,8 @@ const ProjectCard = ({ title, description, icon, links }) => {
               {links.github &&
                 (links.github.url || links.github.comingSoon) && (
                   <button
-                    className="h-10 flex items-center gap-2 px-3 border-2 font-mono transition-all text-sm sm:text-base"
+                    type="button"
+                    className="flex h-10 items-center gap-2 rounded-full border px-4 text-sm transition-all sm:text-base"
                     style={{
                       borderColor: links.github.comingSoon
                         ? "var(--border-color)"
@@ -299,20 +305,21 @@ const ProjectCard = ({ title, description, icon, links }) => {
                       links.github.url &&
                       window.open(links.github.url, "_blank")
                     }
-                    onMouseEnter={(e) =>
-                      !links.github.comingSoon &&
-                      (e.currentTarget.style.backgroundColor =
-                        "rgba(128, 128, 128, 0.1)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.backgroundColor = "transparent")
-                    }
+                      onMouseEnter={(e) => {
+                        if (!links.github.comingSoon) {
+                          e.currentTarget.style.backgroundColor =
+                            "rgba(128, 128, 128, 0.1)";
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "transparent";
+                      }}
                   >
                     <FaGithub className="flex-shrink-0" />
                     <span className="whitespace-nowrap">
                       {links.github.comingSoon
-                        ? "[Source Code Coming Soon]"
-                        : "[View Source]"}
+                        ? "Source code coming soon"
+                        : "View source"}
                     </span>
                   </button>
                 )}
@@ -388,30 +395,26 @@ const About = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.h1
-          className="text-5xl md:text-6xl font-bold mb-4 font-mono tracking-tight"
+          className="mb-4 text-5xl font-extrabold tracking-tight md:text-6xl"
           style={{ color: "var(--color-blue)" }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span style={{ color: "var(--text-muted)" }}>$</span> About Me
+          About Me
         </motion.h1>
         <motion.p
-          className="text-xl font-mono mb-6 max-w-2xl"
+          className="mb-6 max-w-2xl text-xl leading-relaxed"
           style={{ color: "var(--text-muted)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <span className="text-green-400">/*</span>
-          <br />
           Hi! I&apos;m Aadish, a student who loves coding as a hobby and
           building cool apps.
           <br />
           <br />I enjoy working with React, Flutter, and Firebase to create fun
           projects and learn new things along the way.
-          <br />
-          <span className="text-green-400">*/</span>
         </motion.p>
         <motion.div
           className="w-full max-w-md"
@@ -423,13 +426,13 @@ const About = () => {
             href="https://github.com/aadishsamir123"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 py-3 px-6 transition-all flex items-center gap-2 justify-center font-mono hover:opacity-80"
+            className="flex items-center justify-center gap-2 rounded-full border px-6 py-3 font-semibold transition-all hover:opacity-80"
             style={{
               borderColor: "var(--border-color)",
               color: "var(--text-secondary)",
             }}
           >
-            <FaGithub /> [View GitHub Profile]
+            <FaGithub /> View GitHub Profile
           </a>
         </motion.div>
       </motion.div>
@@ -500,7 +503,7 @@ const Projects = () => {
         structuredData={projectsStructuredData}
       />
       <div
-        className="min-h-screen p-8 pt-24 font-mono"
+        className="min-h-screen p-8 pt-24"
         style={{ color: "var(--text-primary)" }}
       >
         <header>
@@ -508,7 +511,7 @@ const Projects = () => {
             className="text-4xl font-bold mb-6"
             style={{ color: "var(--color-blue)" }}
           >
-            <span style={{ color: "var(--text-muted)" }}>$</span> My Projects
+            My Projects
           </h1>
         </header>
         <main>
@@ -704,7 +707,7 @@ function App() {
         fireworks={false}
       />
       <div
-        className="min-h-screen font-mono"
+        className="min-h-screen"
         style={{
           backgroundColor: "var(--bg-primary)",
           color: "var(--text-primary)",

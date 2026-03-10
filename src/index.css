@@ -1,41 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 /* Light mode variables (default) */
 :root {
-  --bg-primary: #f6f8fa;
+  --bg-primary: #f7f6f2;
   --bg-secondary: #ffffff;
-  --bg-tertiary: #f0f3f5;
-  --text-primary: #24292f;
-  --text-secondary: #57606a;
-  --text-muted: #656d76;
-  --border-color: #d0d7de;
-  --border-hover: #58a6ff;
-  --color-blue: #0969da;
-  --color-green: #1a7f37;
-  --color-red: #cf222e;
-  --color-gray: #656d76;
-  --scrollbar-track: #f6f8fa;
-  --scrollbar-thumb: #d0d7de;
-  --scrollbar-thumb-hover: #afb8c1;
+  --bg-tertiary: #efe9df;
+  --text-primary: #1f2937;
+  --text-secondary: #526072;
+  --text-muted: #66758a;
+  --border-color: #ddd2c3;
+  --border-hover: #4d87c7;
+  --color-blue: #2563eb;
+  --color-green: #1f9d74;
+  --color-red: #dc5d48;
+  --color-gray: #7b8797;
+  --scrollbar-track: #f1ece4;
+  --scrollbar-thumb: #d4c6b8;
+  --scrollbar-thumb-hover: #b9a591;
 }
 
 /* Dark mode variables */
 .dark {
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-tertiary: #21262d;
-  --text-primary: #c9d1d9;
-  --text-secondary: #8b949e;
-  --text-muted: #8b949e;
-  --border-color: #30363d;
-  --border-hover: #58a6ff;
-  --color-blue: #58a6ff;
-  --color-green: #3fb950;
-  --color-red: #f85149;
-  --color-gray: #8b949e;
-  --scrollbar-track: #161b22;
-  --scrollbar-thumb: #30363d;
-  --scrollbar-thumb-hover: #484f58;
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #243244;
+  --text-primary: #f3f4f6;
+  --text-secondary: #c1cadd;
+  --text-muted: #9da9bc;
+  --border-color: #334155;
+  --border-hover: #7db4ff;
+  --color-blue: #8cc3ff;
+  --color-green: #51d0a6;
+  --color-red: #ff8f7f;
+  --color-gray: #93a4bb;
+  --scrollbar-track: #17202d;
+  --scrollbar-thumb: #334155;
+  --scrollbar-thumb-hover: #475569;
 }
 
 body {
@@ -43,40 +44,45 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(circle at top, rgba(37, 99, 235, 0.08), transparent 32%),
+    radial-gradient(
+      circle at bottom right,
+      rgba(31, 157, 116, 0.08),
+      transparent 24%
+    );
   color: var(--text-primary);
-  font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", Menlo, Monaco,
-    Consolas, "Courier New", monospace;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-/* Custom scrollbar - terminal style */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
-  border-left: 1px solid var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  border: 1px solid var(--border-color);
-  border-radius: 0;
+  border-radius: 999px;
+  border: 2px solid var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
-  border-color: var(--border-hover);
 }
 
-/* Terminal-style selection */
 ::selection {
-  background-color: rgba(88, 166, 255, 0.2);
-  color: var(--color-blue);
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--text-primary);
 }
 
 ::-moz-selection {
-  background-color: rgba(88, 166, 255, 0.2);
-  color: var(--color-blue);
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--text-primary);
 }

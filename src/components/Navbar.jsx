@@ -11,26 +11,26 @@ const Navbar = () => {
   return (
     <header>
       <nav
-        className="fixed top-0 left-0 right-0 border-b-2 z-50 font-mono transition-colors"
+        className="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors"
         style={{
-          backgroundColor: "var(--bg-primary)",
+          backgroundColor: "color-mix(in srgb, var(--bg-primary) 88%, transparent)",
           borderColor: "var(--border-color)",
         }}
-        role="navigation"
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link
               to="/"
-              className="text-2xl font-semibold tracking-wide font-mono"
+              className="text-2xl font-bold tracking-tight"
               style={{ color: "var(--color-blue)" }}
             >
-              <span style={{ color: "var(--text-muted)" }}>$</span> Aadish Samir
+              Aadish Samir
             </Link>
 
             {/* Mobile Menu Button */}
             <button
+              type="button"
               className="sm:hidden transition-colors relative w-6 h-6"
               style={{ color: "var(--color-blue)", zIndex: 60 }}
               onClick={toggleMenu}
@@ -85,7 +85,7 @@ const Navbar = () => {
                         href={item.path}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-base font-medium transition-colors font-mono"
+                        className="text-base font-medium transition-colors"
                         style={{
                           color: "var(--text-muted)",
                         }}
@@ -95,7 +95,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={item.path}
-                        className="text-base font-medium transition-colors font-mono"
+                        className="text-base font-medium transition-colors"
                         style={{
                           color:
                             location.pathname === item.path
@@ -103,9 +103,7 @@ const Navbar = () => {
                               : "var(--text-muted)",
                         }}
                       >
-                        {location.pathname === item.path
-                          ? `[${item.name}]`
-                          : item.name}
+                        {item.name}
                       </Link>
                     )}
                     {!item.external && location.pathname === item.path && (
@@ -153,11 +151,10 @@ const Navbar = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-3xl font-bold tracking-wide font-mono"
+                    className="text-3xl font-bold tracking-tight"
                     style={{ color: "var(--color-blue)" }}
                   >
-                    <span style={{ color: "var(--text-muted)" }}>$</span> Aadish
-                    Samir
+                    Aadish Samir
                   </motion.div>
 
                   {[
@@ -178,7 +175,7 @@ const Navbar = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={toggleMenu}
-                          className="text-2xl font-medium transition-all font-mono hover:scale-110"
+                          className="text-2xl font-medium transition-all hover:scale-110"
                           style={{
                             color: "var(--text-muted)",
                           }}
@@ -189,7 +186,7 @@ const Navbar = () => {
                         <Link
                           to={item.path}
                           onClick={toggleMenu}
-                          className="text-2xl font-medium transition-all font-mono hover:scale-110"
+                          className="text-2xl font-medium transition-all hover:scale-110"
                           style={{
                             color:
                               location.pathname === item.path
@@ -197,9 +194,7 @@ const Navbar = () => {
                                 : "var(--text-muted)",
                           }}
                         >
-                          {location.pathname === item.path
-                            ? `[${item.name}]`
-                            : item.name}
+                          {item.name}
                         </Link>
                       )}
                     </motion.div>

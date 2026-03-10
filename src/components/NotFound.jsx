@@ -13,7 +13,7 @@ const NotFound = () => {
         url="https://aadish.dev/404"
         noIndex={true}
       />
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center font-mono">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ const NotFound = () => {
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           >
-            <span className="text-gray-500">ERROR:</span> 404
+            404
           </motion.h1>
 
           <motion.h2
@@ -37,7 +37,7 @@ const NotFound = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <span className="text-red-500">//</span> Page Not Found
+            Page Not Found
           </motion.h2>
 
           <motion.p
@@ -47,12 +47,8 @@ const NotFound = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            <span className="text-green-400">/*</span>
-            <br />
             Sorry, the page you're looking for doesn't exist. It might have been
             moved, deleted, or you entered the wrong URL.
-            <br />
-            <span className="text-green-400">*/</span>
           </motion.p>
 
           <motion.div
@@ -63,16 +59,16 @@ const NotFound = () => {
           >
             <Link
               to="/"
-              className="border-2 border-blue-500 hover:bg-blue-500/20 text-blue-400 py-3 px-6 transition-colors flex items-center gap-2 justify-center"
+              className="flex items-center justify-center gap-2 rounded-full border border-blue-500 px-6 py-3 text-blue-400 transition-colors hover:bg-blue-500/20"
             >
-              <FaHome /> [Go Home]
+              <FaHome /> Go Home
             </Link>
 
             <Link
               to="/projects"
-              className="border-2 border-green-500 hover:bg-green-500/20 text-green-400 py-3 px-6 transition-colors flex items-center gap-2 justify-center"
+              className="flex items-center justify-center gap-2 rounded-full border border-green-500 px-6 py-3 text-green-400 transition-colors hover:bg-green-500/20"
             >
-              [View Projects] <FaArrowRight />
+              View Projects <FaArrowRight />
             </Link>
           </motion.div>
         </motion.div>
