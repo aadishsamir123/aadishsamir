@@ -704,7 +704,6 @@ function App() {
       <ChristmasEffects
         snowflakeCount={50}
         showText={false}
-        fireworks={false}
       />
       <div
         className="min-h-screen"
