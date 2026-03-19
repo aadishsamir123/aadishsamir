@@ -21,6 +21,7 @@ import PropTypes from "prop-types";
 import WeatherFast from "./projects/WeatherFast.jsx";
 import ShopSync from "./projects/ShopSync.jsx";
 import QTick from "./projects/QTick.jsx";
+import LastMinute from "./projects/LastMinute.jsx";
 import ShopSyncPrivacyPolicy from "./legal/projects/shopsync/ShopSyncPrivacyPolicy.jsx";
 import ShopSyncDisclaimer from "./legal/projects/shopsync/ShopSyncDisclaimer.jsx";
 import QTickPrivacyPolicy from "./legal/projects/qtick/QTickPrivacyPolicy.jsx";
@@ -464,6 +465,19 @@ const Projects = () => {
             name: "Aadish Samir",
           },
         },
+        {
+          "@type": "SoftwareApplication",
+          name: "LastMinute",
+          description:
+            "Helps students beat last-minute stress by keeping homework, deadlines, and schedules in one clean place. Built using Flutter.",
+          url: "https://aadish.dev/projects/lastminute",
+          applicationCategory: "ProductivityApplication",
+          operatingSystem: "Android, Web",
+          author: {
+            "@type": "Person",
+            name: "Aadish Samir",
+          },
+        },
       ],
     },
   };
@@ -537,6 +551,21 @@ const Projects = () => {
                 project_page: { url: "weatherfast" },
               }}
             />
+            <ProjectCard
+              title="LastMinute"
+              description="Helps students beat last-minute stress with homework and deadline tracking. Built using Flutter."
+              icon="/assets/appicons/lastminute.png"
+              links={{
+                web: { url: "https://lastminute.aadish.dev" },
+                playStore: {
+                  url: "https://play.google.com/store/apps/details?id=com.aadishsamir.lastminute",
+                },
+                github: {
+                  url: "https://github.com/ASDev-Official/lastminute",
+                },
+                project_page: { url: "lastminute" },
+              }}
+            />
           </section>
         </main>
       </div>
@@ -595,6 +624,14 @@ const AnimatedRoutes = () => {
           element={
             <PageWrapper>
               <QTick />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/projects/lastminute"
+          element={
+            <PageWrapper>
+              <LastMinute />
             </PageWrapper>
           }
         />

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaArrowLeft, FaGlobe } from "react-icons/fa";
+import { FaArrowLeft, FaGlobe, FaGithub } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
 
@@ -105,12 +105,10 @@ const ShopSync = () => {
               <span className="whitespace-nowrap">View Website</span>
             </motion.button>
 
-            <br />
-
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.5 }}
               src="/assets/google-play-badge.png"
               alt="Get it on Google Play"
               className="h-[40px] cursor-pointer hover:opacity-80 transition-opacity shadow-md"
@@ -121,6 +119,22 @@ const ShopSync = () => {
                 )
               }
             />
+
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="glass-button flex h-10 items-center gap-2 rounded-full border border-gray-500 px-4 text-sm transition-all hover:bg-gray-500/20 sm:text-base"
+              style={{ color: "var(--text-secondary)" }}
+              onClick={() =>
+                window.open("https://github.com/ASDev-Official/shopsync", "_blank")
+              }
+            >
+              <FaGithub className="flex-shrink-0" />
+              <span className="whitespace-nowrap">View Source</span>
+            </motion.button>
+
+            <br />
 
             <motion.div
               layoutId="card-description-shopsync"

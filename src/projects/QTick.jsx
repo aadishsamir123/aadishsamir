@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaGithub } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
 
@@ -101,6 +101,20 @@ const QTick = () => {
                 )
               }
             />
+
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="glass-button flex h-10 items-center gap-2 rounded-full border border-gray-500 px-4 text-sm transition-all hover:bg-gray-500/20 sm:text-base"
+              style={{ color: "var(--text-secondary)" }}
+              onClick={() =>
+                window.open("https://github.com/ASDev-Official/qtick", "_blank")
+              }
+            >
+              <FaGithub className="flex-shrink-0" />
+              <span className="whitespace-nowrap">View Source</span>
+            </motion.button>
 
             <motion.div
               layoutId="card-description-qtick"
