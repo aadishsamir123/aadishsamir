@@ -7,8 +7,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { ChristmasEffects } from "react-christmas-effects";
-import "react-christmas-effects/dist/index.css";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaGlobe, FaGooglePlay, FaInfoCircle } from "react-icons/fa";
 import Navbar from "./components/Navbar";
@@ -16,7 +15,7 @@ import SEOHead from "./components/SEOHead";
 import NotFound from "./components/NotFound";
 import LoadingScreen from "./components/LoadingScreen";
 import ThemeToggle from "./components/ThemeToggle";
-import ScenicBackground from "./components/ScenicBackground";
+
 import PropTypes from "prop-types";
 import WeatherFast from "./projects/WeatherFast.jsx";
 import ShopSync from "./projects/ShopSync.jsx";
@@ -712,7 +711,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app-shell">
-        <ScenicBackground />
+
         <motion.div
           className="app-content"
           initial={false}
@@ -726,10 +725,7 @@ function App() {
           }}
           aria-hidden={loading}
         >
-          <ChristmasEffects
-            snowflakeCount={50}
-            showText={false}
-          />
+
           <div
             className="min-h-screen"
             style={{
