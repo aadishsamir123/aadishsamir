@@ -134,6 +134,13 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <!-- Google tag (gtag.js) -->
+    <script>
+      if (document.cookie.split(';').some(function(item) {
+        return item.trim().indexOf('cookie_consent=declined') === 0;
+      })) {
+        window['ga-disable-G-26LPBXXDME'] = true;
+      }
+    </script>
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-26LPBXXDME"

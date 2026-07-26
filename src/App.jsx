@@ -15,6 +15,7 @@ import SEOHead from "./components/SEOHead";
 import NotFound from "./components/NotFound";
 import LoadingScreen from "./components/LoadingScreen";
 import ThemeToggle from "./components/ThemeToggle";
+import CookieConsent from "./components/CookieConsent";
 
 import PropTypes from "prop-types";
 import WeatherFast from "./projects/WeatherFast.jsx";
@@ -734,6 +735,7 @@ function App() {
           >
             <Navbar />
             <ThemeToggle />
+            <CookieConsent />
             <main>
               <AnimatedRoutes />
             </main>
